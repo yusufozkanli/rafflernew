@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  raffle: one
+  user: one
+  quantity: 1
+  total: 
+  date: 2017-11-21
+
+two:
+  raffle: two
+  user: two
+  quantity: 1
+  total: 
+  date: 2017-11-21
