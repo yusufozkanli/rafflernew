@@ -1,0 +1,31 @@
+.fullbox {
+  width: 100%;
+  height: 130vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.halfboxleft {
+  width: 50%;
+  background-color: $gray;
+  position: relative;
+}
+
+.children {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+}
+
+.halfboxleft p {
+  color: $green;
+  font-size: 36px;
+}
+
+.halfboxright {
+  width: 50%;
+}
+
+.raffleform {
+  margin-top: 10px;
+}
