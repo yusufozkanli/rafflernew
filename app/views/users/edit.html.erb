@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="raffleform col-sm-4 col-sm-offset-2 text-center">
+        <%= simple_form_for [@user] do |f| %>
+          <%= f.input :name %>
+          <%= f.input :facebook %>
+          <%= f.input :instagram %>
+          <%= f.input :location %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.submit "Update Your Profile", class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+</div>

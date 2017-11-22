@@ -27,7 +27,7 @@
           </div>
           <div class="user-avatar">
             <img src="https://www.aptitudesoftware.com/wp-content/uploads/Round-profile-2.png" style="width:70px;height:70px;">
-            <p> Handsome Guy </p>
+            <%= link_to "#{@raffle.user.email}", user_path(@user) %>
           </div>
         </div>
     </div>
