@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :users, only: [ :show, :update, :edit ]
 
   get '/pages/confirmation', to: 'pages#confirmation'
+  get '/pages/winners', to: 'pages#winners'
 end

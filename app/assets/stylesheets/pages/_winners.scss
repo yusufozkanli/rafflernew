@@ -1,0 +1,86 @@
+.userflex-winners {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  height: 80vh;
+  width: 100%
+}
+
+.user-info-winners {
+  width: 33%;
+  background-color: $gray;
+  border-radius: 10px;
+  color: white;
+}
+
+.user-avatar-winners {
+  margin-top: 35px;
+}
+
+.trophy {
+  margin-top: 13px;
+}
+
+.info-trophy {
+  color: #FFB636;
+}
+
+.user-info-winners2 {
+  width: 64%;
+  background-color: $gray;
+  border-radius: 10px;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-text2 {
+  color: $green;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.prize {
+  background-color: $gray;
+  font-size: 25px;
+  z-index: 2;
+  position: relative;
+  top: 15px;
+  padding: 30px;
+}
+
+.section-line {
+  border-top: 3px solid $green;
+  display: block;
+  height: 1px;
+  position: relative;
+  top: 38px;
+  width: 100%;
+  margin: auto;
+}
+
+.prize-photo img {
+  height: 150px;
+  width: auto;
+  margin-top: 50px;
+}
+
+.prize-desc {
+  margin-top: 12px;
+}
+
+.info-text3 {
+  color: $green;
+  margin-top: 2px;
+  width: 100%;
+}
+
+.winners-comments {
+  position: relative;
+  top: 50px;
+}
+
+
