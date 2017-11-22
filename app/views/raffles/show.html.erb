@@ -37,9 +37,7 @@
       <div class="leftbox-content text-center">
         <h2> <%= @raffle.brand %></h2>
         <h3> <%= @raffle.end_date %></h3>
-        <div class="btn btn-success">
-          <%= link_to "Buy Ticket", new_raffle_order_path(@raffle), class: "btn btn-success" %>
-        </div>
+        <%= render 'orders/new' %>
       </div>
     </div>
 

@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3 col-xs-offset-2">
+      <%= simple_form_for [@raffle, @order] do |f| %>
+      <%= f.input :quantity %>
+      <%= f.submit "Add your raffle", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
