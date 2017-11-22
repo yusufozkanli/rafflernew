@@ -1,9 +1,15 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "LogoRaffler2.png" %>
-  <% end %>
-  <h1>Raffler</h1>
+  <div class="navbar-wagon-left">
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "LogoRaffler2.png" %>
+    <% end %>
+    <p class="navbar-raffler-title">Raffler</p>
+    <div class="navbar-search">
+      <input type="text" class="navbar-search-field" placeholder="&#61447";>
+      <i class="fa fa-search"></i>
+    </div>
+</div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right">
@@ -11,9 +17,10 @@
     <% #if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Buy Tickets", "#", class: "navbar-wagon-item btn-success buy-tickets" %>
+      <div class="navbar-wagon-item navbar-ticket-item">
+        <div class="navbar-ticket-counter"># You have 1 ticket</div>
+        <%= link_to "Buy Tickets", "#", class: "navbar-wagon-item btn-success navbar-buy-tickets" %>
+      </div>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -40,11 +47,13 @@
       </div>
     <% #else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+ <!--      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %> -->
     <% #end %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
 
 </div>
+
+
 
