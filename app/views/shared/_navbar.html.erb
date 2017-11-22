@@ -4,7 +4,10 @@
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
       <%= image_tag "LogoRaffler2.png" %>
     <% end %>
-    <p class="navbar-raffler-title">Raffler</p>
+    <%= link_to root_path, class: "navbar-raffler-title" do %>
+      Raffler
+    <% end %>
+<!--     <a href= class="navbar-raffler-title">Raffler</a> -->
     <div class="navbar-search">
       <i class="fa fa-search search-icon"></i>
       <input type="text" class="navbar-search-field" placeholder="Search">
