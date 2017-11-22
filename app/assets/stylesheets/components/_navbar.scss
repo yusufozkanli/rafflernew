@@ -114,14 +114,20 @@
   text-align: center;
 }
 
+.search-icon {
+  font-size: 22px;
+  margin-right: 10px;
+}
+
 .navbar-search-field {
-  background-color: #666464;
-  border-radius: 5px;
+  background-color: transparent;
   border-style: none;
   color: $light-gray;
   outline: none !important;
+  &:focus {
+  }
 }
 
 .navbar-search {
-  background-image: url("<i class="fa fa-search"></i>");
+  margin-left: 20px;
 }
