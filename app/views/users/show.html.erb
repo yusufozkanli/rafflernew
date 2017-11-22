@@ -1,11 +1,12 @@
 <div class="container">
   <div class="userflex">
 
-    <div class="user-info text-center">
-      <img class="user-avater" src="http://www.rickeliason.com/wp-content/uploads/2012/08/rick-eliason.png" alt="Profile" style="width:150px;height:150px;">
+    <div class="user-info">
+      <%= link_to "", edit_user_path(@user) , class: "fa fa-pencil" %>
+      <%= cl_image_tag @user.photo, class: "avatar", crop: :fill, style: "width: 150px; height: 150px;" %>
       <div class="info-text text-center">
-        <h3> CHRIS MARTIN </h3>
-        <p> LONDON, UK</p>
+        <h3> <%= @user.name %> </h3>
+        <p> <%= @user.location %> </p>
       </div>
     </div>
 
@@ -30,3 +31,4 @@
 
   </div>
 </div>
+

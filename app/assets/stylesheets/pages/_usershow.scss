@@ -6,11 +6,34 @@
   width: 100%
 }
 
+
 .user-info {
   width: 33%;
   background-color: $gray;
   border-radius: 5px;
   color: white;
+  position: relative;
+}
+
+.avatar {
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+}
+
+.info-text {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+}
+
+.fa {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-size: 16px;
 }
 
 .user-raffles {
@@ -58,3 +81,4 @@
   text-align: right;
   border-top-right-radius: 5px;
 }
+
