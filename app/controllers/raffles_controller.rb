@@ -2,7 +2,8 @@ class RafflesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @raffles = Raffle.last(6)
+    @raffles = Raffle.last(3)
+    @raffles_ending = Raffle.where("end_date = '#{Date.today}'")
   end
 
   def show
