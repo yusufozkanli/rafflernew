@@ -1,8 +1,8 @@
 /* Main navbar */
+
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: $gray;
-  transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
   display: flex;
@@ -20,6 +20,13 @@
   height: 35px;
   width: 35px;
   border-radius: 50%;
+}
+
+// Left section
+.navbar-wagon-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Right section */
@@ -45,16 +52,16 @@
   text-decoration: none;
 }
 
-.buy-tickets {
+.navbar-buy-tickets {
   background-color: $green;
   color: $gray;
   font-size: 14px;
-  padding: 5px 12px;
+  padding: 3px 12px;
   border-radius: 3px;
   font-weight: bold;
 }
 
-.buy-tickets:hover {
+.navbar-buy-tickets:hover {
   text-decoration: none;
 }
 
@@ -87,4 +94,34 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.navbar-raffler-title {
+  color: $green;
+  font-size: 20px;
+  padding: 0 10px;
+  margin-bottom: 0px;
+}
+
+.navbar-ticket-counter {
+  color: $green;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.navbar-ticket-item {
+  text-align: center;
+}
+
+.navbar-search-field {
+  background-color: #666464;
+  border-radius: 5px;
+  border-style: none;
+  color: $light-gray;
+  outline: none !important;
+}
+
+.navbar-search {
+  background-image: url("<i class="fa fa-search"></i>");
 }
