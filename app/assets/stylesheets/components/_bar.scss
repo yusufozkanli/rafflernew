@@ -1,9 +1,10 @@
 .card-bar {
   height: 4px;
   width: 80%;
-  background-color: $gray;
+  background-color: white;
   margin: 15px 15px;
   border-radius: 3px;
+  border-shadow: 10px 10px 5px #888888;
 }
 
 .card-bar-green {
