@@ -1,11 +1,12 @@
 .card-bar {
-  height: 4px;
-  width: 80%;
+  height: 6px;
+  width: 90%;
   background-color: white;
   margin: 15px 15px;
   border-radius: 3px;
-  border-shadow: 10px 10px 5px #888888;
+ border: 0.5px solid #e8e8e8;
 }
+
 
 .card-bar-green {
   border-radius: 3px;
