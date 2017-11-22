@@ -1,0 +1,29 @@
+<div class="fullbox">
+  <div class="halfboxleft text-center">
+      <div class="children text-center">
+        <p> The most entertaining way <br> to sell your luxury product <br> at a profit. </p>
+      </div>
+  </div>
+  <div class="halfboxright">
+    <div class="container">
+      <div class="row">
+        <div class="raffleform col-sm-4 col-sm-offset-1 text-center">
+        <%= simple_form_for [@raffle] do |f| %>
+          <%= f.input :category_name %>
+          <%= f.input :brand %>
+          <%= f.input :model %>
+          <%= f.input :price %>
+          <%= f.input :color %>
+          <%= f.input :description %>
+          <%= f.input :end_date %>
+          <%= f.input :max_ticket %>
+          <%= f.input :min_ticket %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.submit "Add your raffle", class: "btn btn-success" %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
