@@ -4,7 +4,10 @@
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
       <%= image_tag "LogoRaffler2.png" %>
     <% end %>
-    <p class="navbar-raffler-title">Raffler</p>
+    <%= link_to root_path, class: "navbar-raffler-title" do %>
+      Raffler
+    <% end %>
+<!--     <a href= class="navbar-raffler-title">Raffler</a> -->
     <div class="navbar-search">
       <i class="fa fa-search search-icon"></i>
       <input type="text" class="navbar-search-field" placeholder="Search">
@@ -25,27 +28,33 @@
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
+        <% if user_signed_in? && current_user.photo != nil %>
+          <div class="dropdown">
+            <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li>
+                <%= link_to "#" do %>
+                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <% end %>
+              </li>
+              <li>
+               <%= link_to "#" do %>
                 <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
+               <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        <% else %>
+        <%= link_to "Sign Up", new_user_registration_path(current_user), class: "navbar-wagon-item navbar-wagon-link"%>
+        <%= link_to "Sign In", new_user_session_path(current_user), class: "navbar-wagon-item navbar-wagon-link"%>
+        <% end %>
       </div>
+
     <% #else %>
       <!-- Login link (when logged out) -->
  <!--      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %> -->
