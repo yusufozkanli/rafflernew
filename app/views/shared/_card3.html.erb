@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-     <% @raffles.each do |r| %>
+     <% @user.raffles.each do |r| %>
       <div class="col-xs-6 col-sm-3">
         <div class="card">
           <div class="image">
@@ -14,7 +14,7 @@
             <div class="info raffle-name">
             <p> <%= r.model %> </p>
             </div>
-            <div class="timer btn">
+            <div class="info btn btn-success">
               <p> <%= r.end_date %> </p>
             </div>
           </div>
