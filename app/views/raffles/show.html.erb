@@ -5,10 +5,13 @@
 
       <div class="raffle-image-box">
         <div class="raffle-image">
-          <img src="https://drop.ndtv.com/TECH/product_database/images/913201720152AM_635_iphone_x.jpeg" style="width:350px;height:300px;">
+          <%= cl_image_tag @raffle.photo, class: "img-show", crop: :fill, style: "width: 300px; height: 300px;" %>
           <div class="raffle-bar">
             <div class="card-bar">
               <div class="card-bar-green">
+              </div>
+              <div class="tickets-left text-left">
+                <p> 1000 / <%= @raffle.max_ticket %> tickets left </p>
               </div>
             </div>
           </div>
@@ -17,9 +20,10 @@
 
         <div class="raffle-info">
           <div class="raffle-info-content">
-            <p> Brand: Iphone </p>
-            <p> Condition: Brand New </p>
-            <p> Description: It is an amazing phone for a great value, dont miss this raffle </p>
+            <p> Category: <%= @raffle.category_name %> </p>
+            <p> Brand: <%= @raffle.brand %> </p>
+            <p> Color: <%= @raffle.color %> </p>
+            <p> Description: <%= @raffle.description %> </p>
           </div>
           <div class="user-avatar">
             <img src="https://www.aptitudesoftware.com/wp-content/uploads/Round-profile-2.png" style="width:70px;height:70px;">
@@ -31,9 +35,10 @@
 
     <div class="leftbox">
       <div class="leftbox-content text-center">
-        <h2>Iphone X</h2>
-        <h3>12.12.12</h3>
+        <h2> <%= @raffle.brand %></h2>
+        <h3> <%= @raffle.end_date %></h3>
         <div class="btn btn-success">
+          <%= link_to "Buy Ticket", new_raffle_order_path(@raffle), class: "btn btn-success" %>
         </div>
       </div>
     </div>

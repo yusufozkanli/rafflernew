@@ -6,6 +6,7 @@ class RafflesController < ApplicationController
   end
 
   def show
+    @raffle = Raffle.find(params[:id])
   end
 
   def new
@@ -35,7 +36,7 @@ class RafflesController < ApplicationController
   private
 
   def raffle_params
-  params.require(:raffle).permit(:category_name, :brand, :model, :color, :price, :description, :end_date, :max_ticket, :min_ticket, :photo, :photo_cache)
+  params.require(:raffle).permit(:category_name, :brand, :model, :color, :price, :description, :end_date, :max_ticket, :min_ticket, :photo)
   end
 
 end
