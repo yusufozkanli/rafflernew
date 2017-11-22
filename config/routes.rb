@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :raffles do
     resources :orders, only: [:new, :create]
   end
-
   resources :users, only: [ :show, :update, :edit ]
+
+  get '/pages/confirmation', to: 'pages#confirmation'
 end

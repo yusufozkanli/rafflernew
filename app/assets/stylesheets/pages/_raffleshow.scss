@@ -1,0 +1,58 @@
+.rafflebox {
+  height: 150vh;
+  width: 100%;
+  display: flex;
+}
+
+.rightbox {
+  height: 100%;
+  width: 50%;
+  background-color: $white;
+  position: relative;
+}
+
+.raffle-image-box {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+}
+
+.raffle-info {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  height: 300px;
+  background-color: $light-gray;
+  color: black;
+}
+
+.leftbox {
+  height: 100%;
+  width: 50%;
+  background-color: $gray;
+  color: white;
+  position:relative
+}
+
+.raffle-image {
+  width: 400px;
+  height: 400px;
+}
+
+.raffle-image-box {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+.user-avatar {
+  display: flex;
+}
+
+.leftbox-content {
+  margin-top: 150px;
+  position: sticky;
+  top: 20%;
+  left: 30%;
+  font-size: 26px;
+}

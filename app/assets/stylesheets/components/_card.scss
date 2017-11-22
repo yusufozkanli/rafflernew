@@ -19,6 +19,7 @@
   background: black;
   opacity: 0;
 }
+
 .card-link:hover {
   opacity: 0.1;
 }
@@ -29,7 +30,12 @@
 }
 
 .info {
+  color: $gray;
+  text-shadow: none;
   margin-left: 5px;
   margin-right: 5px;
 }
 
+.info p {
+  margin-bottom: 0px;
+}
