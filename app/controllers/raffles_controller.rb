@@ -1,5 +1,5 @@
 class RafflesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :browse]
 
   def index
     @raffles = Raffle.last(3)
@@ -31,6 +31,7 @@ class RafflesController < ApplicationController
       render 'new'
     end
   end
+
   def edit
     @raffle = Raffle.find(params[:id])
   end
