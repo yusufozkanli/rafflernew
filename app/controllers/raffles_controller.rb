@@ -4,6 +4,8 @@ class RafflesController < ApplicationController
   def index
     @raffles = Raffle.last(3)
     @raffles_ending = Raffle.where("end_date = '#{Date.today}'")
+    won_orders = Order.where(won: true)
+    @orders = won_orders.last(3)
   end
 
   def show
@@ -39,7 +41,7 @@ class RafflesController < ApplicationController
   private
 
   def raffle_params
-  params.require(:raffle).permit(:category_name, :brand, :model, :color, :price, :description, :end_date, :max_ticket, :min_ticket, :photo)
+  params.require(:raffle).permit(:category_name, :brand, :model, :color, :price, :description, :end_date, :ticket_quantity, :photo)
   end
 
 end
