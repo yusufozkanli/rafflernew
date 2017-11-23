@@ -7,6 +7,12 @@ class Raffle < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
+  def time_left_in_seconds
+    2345
+    # calculate the time between the current time and the end_date
+    # return it as seconds
+  end
+
   CATEGORIES = ['Electronics','Cars','Fashion','Jewelery', 'Experiences', 'Other']
 
 end
