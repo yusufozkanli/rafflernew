@@ -9,8 +9,7 @@
       <div class="row">
         <div class="raffleform col-sm-4 col-sm-offset-1 text-center">
         <%= simple_form_for [@raffle] do |f| %>
-          <%= f.input :title %>
-          <%= f.input :category_name, collection: Raffle::CATEGORIES%>
+          <%= f.input :category_name, collection: ['Electronics','Cars','Fashion','Jewelery', 'Experiences', 'Other']%>
           <%= f.input :brand %>
           <%= f.input :model %>
           <%= f.input :color %>
@@ -19,7 +18,7 @@
           <%= f.input :ticket_quantity %>
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
-          <%= f.submit "Add your raffle", class: "btn btn-success" %>
+          <%= f.submit "Update raffle", class: "btn btn-success" %>
         <% end %>
         </div>
       </div>

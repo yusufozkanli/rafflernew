@@ -19,7 +19,17 @@ class RafflesController < ApplicationController
   end
 
   def browse
-    @raffles = Raffle.all.where("status" == "open")
+
+
+    if params[:search]
+      @raffles = Raffle.all.where("model iLIKE ?", "%#{params[:search]}%")
+    elsif params[:category]
+      @raffles = Raffle.all.where(category_name: params[:category])
+    elsif params[:search] && params[:category]
+
+    else
+      @raffles = Raffle.all.where("status" == "open")
+    end
   end
 
   def create

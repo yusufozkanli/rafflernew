@@ -12,4 +12,7 @@ class Raffle < ApplicationRecord
     # calculate the time between the current time and the end_date
     # return it as seconds
   end
+
+  CATEGORIES = ['Electronics','Cars','Fashion','Jewelery', 'Experiences', 'Other']
+
 end

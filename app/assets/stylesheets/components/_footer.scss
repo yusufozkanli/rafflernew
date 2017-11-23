@@ -72,3 +72,5 @@
   color: $green;
  }
 
+.footer-grow { transition: all .2s ease-in-out; }
+.footer-grow:hover { transform: scale(1.25); }
