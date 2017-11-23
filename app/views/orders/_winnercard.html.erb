@@ -1,0 +1,22 @@
+<div class="container">
+   <div class="row">
+     <% @orders.each do |o| %>
+      <div class="col-xs-4 col-sm-3">
+        <div class="card">
+          <div class="image">
+            <%= cl_image_tag o.raffle.photo, class: "img-show", crop: :fill, style: "width: 260px; height: 175px;" %>
+          </div>
+            <div class="card-info">
+              <div class="info raffle-name">
+              <p> <%= o.user.name %> </p>
+              <p> <%= o.raffle.brand %> / <%= o.raffle.model %> </p>
+              </div>
+              <%= cl_image_tag o.user.photo, class: "img-avatar", crop: :fill, style: "width: 30px; height: 30px;" %>
+            </div>
+          </div>
+          <%= link_to "", raffle_order_winner_path(o.raffle, o), class: "card-link"%>
+        </div>
+      <% end %>
+    </div>
+</div>
+
