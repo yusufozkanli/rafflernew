@@ -1,26 +1,29 @@
-
-   <div class="row">
-     <% @user.raffles.each do |r| %>
-      <div class="col-xs-4 col-sm-3">
-        <div class="card">
-          <div class="image">
-            <%= cl_image_tag r.photo, class: "img-show", crop: :fill, style: "width: 150px; height: 100px;" %>
+<div class="row">
+ <% @user.raffles.each do |r| %>
+  <div class="col-xs-4 col-sm-3">
+    <%= link_to raffle_path(r) do %>
+      <div class="card">
+        <div class="image">
+          <%= cl_image_tag r.photo, class: "img-show", crop: :fill, style: "width: 150px; height: 100px;" %>
+        </div>
+        <div class="top-bar-icons">
+        <%= link_to "", new_raffle_path(@raffles) , class: "fa fa-pencil raffle-edit" %>
+        </div>
+        <div class="card-bar">
+          <div class="card-bar-green">
           </div>
-          <div class="card-bar">
-            <div class="card-bar-green">
-            </div>
-          </div>
-          <div class="card-info">
-            <div class="info raffle-name">
+        </div>
+        <div class="card-info">
+          <div class="info raffle-name">
             <p> <%= r.model %> </p>
-            </div>
-            <div class="info timer-btn">
-              <p> <%= r.end_date %> </p>
-            </div>
           </div>
-        <%= link_to "", raffle_path(r), class: "card-link"%>
+          <div class="info timer-btn">
+            <p> <%= r.end_date %> </p>
+          </div>
         </div>
       </div>
-     <% end %>
-    </div>
+    <% end %>
+  </div>
+ <% end %>
+</div>
 
