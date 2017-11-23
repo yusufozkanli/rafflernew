@@ -1,3 +1,15 @@
 <div class="container">
+ <div class="dropdown">
+      <button  style="background:#383737" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-filter" style="color: #2bde73"></i>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dLabel">
+        <% Raffle::CATEGORIES.each do |category_name| %>
+          <li><%= link_to category_name, browse_path(category: category_name) %></li>
+        <% end %>
+      </ul>
+    </div>
+</div>
 <%= render 'shared/card' %>
 </div>
