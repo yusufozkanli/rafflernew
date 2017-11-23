@@ -4,6 +4,8 @@ class RafflesController < ApplicationController
   def index
     @raffles = Raffle.last(3)
     @raffles_ending = Raffle.where("end_date = '#{Date.today}'")
+    won_orders = Order.where(won: true)
+    @orders = won_orders.last(3)
   end
 
   def show
