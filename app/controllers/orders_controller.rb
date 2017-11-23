@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:winner]
   before_action :set_raffle
 
   def new
@@ -11,13 +12,19 @@ class OrdersController < ApplicationController
     @order.raffle_id = @raffle.id
     @order.ticket_number = set_ticket_number
     if @order.save
-      redirect_to raffle_path(@raffle)
-       flash[:notice] = "Successfully enrolled in the raffle"
+      redirect_to raffle_order_confirmation_path(@raffle, @order)
     else
       render 'orders/new'
     end
   end
 
+  def confirmation
+    set_order
+  end
+
+  def winner
+    set_order
+  end
 
   private
 
@@ -29,12 +36,13 @@ class OrdersController < ApplicationController
     @raffle = Raffle.find(params[:raffle_id])
   end
 
+  def set_order
+    @order = Order.find(params[:order_id])
+  end
+
   def set_ticket_number
     ticket_numbers = []
-    x = @order.quantity.to_i
-    x.times do
-      ticket_numbers << 10.times.map{rand(10)}.join
-    end
+    ticket_numbers << 10.times.map{rand(10)}.join
     return ticket_numbers
   end
 

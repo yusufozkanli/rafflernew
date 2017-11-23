@@ -9,6 +9,10 @@
   position: relative;
 }
 
+.img-avatar {
+  border-radius: 50%;
+}
+
 .card-link {
   position: absolute;
   top: 0;
@@ -20,9 +24,9 @@
   opacity: 0;
 }
 
-.card-link:hover {
-  opacity: 0.1;
-}
+// .card-link:hover {
+//   opacity: 0.1;
+// }
 
 .card-info {
   display: flex;
@@ -55,4 +59,4 @@
 }
 
 .grow { transition: all .2s ease-in-out; }
-.grow:hover { transform: scale(1.2); }
+.grow:hover { transform: scale(1.08); }

@@ -16,54 +16,79 @@
 </div>
 
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right">
-
-    <% #if user_signed_in? %>
-
-      <!-- Links when logged in -->
-      <div class="navbar-wagon-item navbar-ticket-item">
-        <div class="navbar-ticket-counter"># You have 1 ticket</div>
-        <%= link_to "Buy Tickets", "#", class: "navbar-wagon-item btn-success navbar-buy-tickets" %>
-      </div>
-
+    <div class="navbar-wagon-right">
       <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <% if user_signed_in? && current_user.photo != nil %>
+      <div class="navbar-wagon-item navbar-ticket-item">
+        <% if user_signed_in? %>
+            <div class="navbar-ticket-counter"># You have 1 ticket
+            </div>
+            <%= link_to "Buy Tickets", "#", class: "navbar-wagon-item btn-success navbar-buy-tickets" %>
+          </div>
           <div class="dropdown">
-            <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <% if current_user.photo? %>
+              <div class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" style="background-image: url('<%= cl_image_path current_user.photo %>')"></div>
+            <% else %>
+              <div class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')"></div>
+            <% end %>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li>
-                <%= link_to "#" do %>
-                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <%= link_to user_path(current_user) do %>
+                 <i class="fa fa-user navbar-dropdown-icon"></i> <%= t(".profile", default: "Dashboard") %>
                 <% end %>
               </li>
               <li>
-               <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+                <%= link_to new_raffle_path do %>
+                 <i class="fa fa-plus navbar-dropdown-icon"></i> <%= t(".profile", default: "List a Raffle") %>
+                <% end %>
+              </li>
+              <li>
+               <%= link_to root_path do %>
+                <i class="fa fa-home navbar-dropdown-icon"></i>  <%= t(".profile", default: "Home") %>
                <% end %>
               </li>
               <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                  <i class="fa fa-sign-out navbar-dropdown-icon"></i>  <%= t(".sign_out", default: "Log out") %>
                 <% end %>
               </li>
             </ul>
           </div>
         <% else %>
-        <%= link_to "Sign Up", new_user_registration_path(current_user), class: "navbar-wagon-item navbar-wagon-link"%>
-        <%= link_to "Sign In", new_user_session_path(current_user), class: "navbar-wagon-item navbar-wagon-link"%>
+        <a class= "navbar-wagon-item navbar-wagon-link", data-toggle = "modal" , data-target ="#myModal2"> Sign In </a>
+        <a class= "navbar-wagon-item navbar-wagon-link", data-toggle = "modal" , data-target ="#myModal"> Sign Up </a>
         <% end %>
       </div>
-
-    <% #else %>
-      <!-- Login link (when logged out) -->
- <!--      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %> -->
-    <% #end %>
-  </div>
+    </div>
 
   <!-- Dropdown list appearing on mobile only -->
-
 </div>
+
+
+<!-- Modal DO NOT TOUCH !! -->
+
+<div class="modal fade text-center" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= render 'devise/registrations/new' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade text-center" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= render 'devise/sessions/new' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 

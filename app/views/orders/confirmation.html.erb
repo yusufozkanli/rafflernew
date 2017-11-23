@@ -3,12 +3,11 @@
      <img src="/assets/ticket.png" alt="Ticket" style="width: 280px;">
       <div class="ticket-number">
         <p><strong>Your ticket number is :</strong>
-          <br># 123456789123
+          <br> <%= @order.ticket_number.first %>
         </p>
         <div class="time-card">
-          <p><strong style="line-height: 3;">2 days - 3 hours - 24 mins - 14 seconds</strong></p>
+          <p><strong style="line-height: 3;"> <%= @raffle.end_date %> </strong></p>
         </div>
       </div>
   </div>
 </div>
-
