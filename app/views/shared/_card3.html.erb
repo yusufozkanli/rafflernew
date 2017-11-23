@@ -2,7 +2,7 @@
    <div class="row">
      <% @user.raffles.each do |r| %>
       <div class="col-xs-4 col-sm-3">
-        <div class="card">
+        <div class="card grow">
           <div class="image">
             <%= cl_image_tag r.photo, class: "img-show", crop: :fill, style: "width: 150px; height: 100px;" %>
           </div>

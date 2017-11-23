@@ -56,3 +56,21 @@
   left: 30%;
   font-size: 26px;
 }
+
+.btn-buy {
+  margin-top: 40px;
+  background: $green;
+  width: 150px;
+  height: 70px;
+  border-radius: 50pc;
+  font: 20px;
+  border: 0px solid white;
+  font-size: 20px
+  // border: 2px solid white;
+}
+.btn-buy:hover {
+   border: 2px solid white;
+   transition: border 0.2s ease;
+}
+
+
