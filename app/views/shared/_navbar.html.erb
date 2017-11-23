@@ -42,6 +42,11 @@
                 <% end %>
               </li>
               <li>
+                <%= link_to new_raffle_path do %>
+                 <i class="fa fa-plus navbar-dropdown-icon"></i> <%= t(".profile", default: "List a Raffle") %>
+                <% end %>
+              </li>
+              <li>
                <%= link_to root_path do %>
                 <i class="fa fa-home navbar-dropdown-icon"></i>  <%= t(".profile", default: "Home") %>
                <% end %>
