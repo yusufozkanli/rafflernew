@@ -36,7 +36,7 @@
     <div class="leftbox">
       <div class="leftbox-content text-center">
         <h2> <%= @raffle.brand %></h2>
-        <h3> <%= @raffle.end_date %></h3>
+        <div class="your-clock" data-ends-in-seconds="<%= (@raffle.end_date - Time.now).to_i %>"></div>
         <%= render 'orders/new' %>
       </div>
     </div>
