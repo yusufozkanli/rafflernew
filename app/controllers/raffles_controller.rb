@@ -18,6 +18,10 @@ class RafflesController < ApplicationController
     @raffle = Raffle.new
   end
 
+  def browse
+    @raffles = Raffle.all.where("status" == "open")
+  end
+
   def create
     @raffle = Raffle.new(raffle_params)
     @raffle.user_id = current_user.id
@@ -27,7 +31,6 @@ class RafflesController < ApplicationController
       render 'new'
     end
   end
-
   def edit
     @raffle = Raffle.find(params[:id])
   end
