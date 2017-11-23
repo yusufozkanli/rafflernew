@@ -16,19 +16,14 @@
 </div>
 
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right">
-
-    <% #if user_signed_in? %>
-
-      <!-- Links when logged in -->
-      <div class="navbar-wagon-item navbar-ticket-item">
-        <div class="navbar-ticket-counter"># You have 1 ticket</div>
-        <%= link_to "Buy Tickets", "#", class: "navbar-wagon-item btn-success navbar-buy-tickets" %>
-      </div>
-
+    <div class="navbar-wagon-right">
       <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
+      <div class="navbar-wagon-item navbar-ticket-item">
         <% if user_signed_in? %>
+            <div class="navbar-ticket-counter"># You have 1 ticket
+            </div>
+            <%= link_to "Buy Tickets", "#", class: "navbar-wagon-item btn-success navbar-buy-tickets" %>
+          </div>
           <div class="dropdown">
             <% if current_user.photo? %>
               <div class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" style="background-image: url('<%= cl_image_path current_user.photo %>')"></div>
@@ -39,6 +34,11 @@
               <li>
                 <%= link_to user_path(current_user) do %>
                  <i class="fa fa-user navbar-dropdown-icon"></i> <%= t(".profile", default: "Dashboard") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_raffle_path do %>
+                 <i class="fa fa-plus navbar-dropdown-icon"></i> <%= t(".profile", default: "List a Raffle") %>
                 <% end %>
               </li>
               <li>
@@ -75,6 +75,7 @@
     </div>
   </div>
 </div>
+
 
 
 <div class="modal fade text-center" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
