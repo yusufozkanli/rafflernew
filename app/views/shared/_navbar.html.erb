@@ -54,15 +54,41 @@
             </ul>
           </div>
         <% else %>
-        <%= link_to "Sign Up", new_user_registration_path(current_user), class: "navbar-wagon-item navbar-wagon-link"%>
-        <%= link_to "Sign In", new_user_session_path(current_user), class: "navbar-wagon-item navbar-wagon-link"%>
+        <a class= "navbar-wagon-item navbar-wagon-link", data-toggle = "modal" , data-target ="#myModal2"> Sign In </a>
+        <a class= "navbar-wagon-item navbar-wagon-link", data-toggle = "modal" , data-target ="#myModal"> Sign Up </a>
         <% end %>
       </div>
     </div>
 
   <!-- Dropdown list appearing on mobile only -->
-
 </div>
+
+
+<!-- Modal DO NOT TOUCH !! -->
+
+<div class="modal fade text-center" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= render 'devise/registrations/new' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade text-center" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= render 'devise/sessions/new' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 
