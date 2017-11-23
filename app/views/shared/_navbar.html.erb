@@ -8,10 +8,29 @@
       Raffler
     <% end %>
 <!--     <a href= class="navbar-raffler-title">Raffler</a> -->
-    <div class="navbar-search">
-      <i class="fa fa-search search-icon"></i>
-      <input type="text" class="navbar-search-field" placeholder="Search">
 
+    <%= form_tag browse_path, :method => 'get' do %>
+      <div class="navbar-search">
+        <input type="text" name="search" id="search" class="navbar-search-field">
+        <%= button_tag do %>
+          <i class="fa fa-search search-icon"></i>
+        <% end %>
+      </div>
+    <% end %>
+
+
+
+
+    <div class="dropdown">
+      <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-filter"></i>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dLabel">
+        <% Raffle::CATEGORIES.each do |category_name| %>
+          <li><%= link_to category_name, browse_path(category: category_name) %></li>
+        <% end %>
+      </ul>
     </div>
 </div>
 
