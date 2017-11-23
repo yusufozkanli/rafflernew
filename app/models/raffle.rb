@@ -7,5 +7,7 @@ class Raffle < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
+  include PgSearch
+  pg_search_scope :search, against: [ :category_name, :brand, :model ]
 
 end

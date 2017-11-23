@@ -41,6 +41,14 @@ class RafflesController < ApplicationController
     redirect_to raffle_path(@raffle)
   end
 
+  def search
+    if params[:query].blank?
+      redirect_to root_path
+    else
+      @raffles = Raffle.search(params[:query])
+    end
+  end
+
   private
 
   def raffle_params

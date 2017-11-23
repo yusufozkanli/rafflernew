@@ -10,7 +10,10 @@
 <!--     <a href= class="navbar-raffler-title">Raffler</a> -->
     <div class="navbar-search">
       <i class="fa fa-search search-icon"></i>
-      <input type="text" class="navbar-search-field" placeholder="Search">
+      <input type="text" id="navbar-search-field" placeholder="Search">
+      <%= form_tag(search_path, method: :get, id: "navbar-search-field") do %>
+        <%= search_field_tag :query %>
+      <% end %>
 
     </div>
 </div>
