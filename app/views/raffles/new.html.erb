@@ -9,7 +9,7 @@
       <div class="row">
         <div class="raffleform col-sm-4 col-sm-offset-1 text-center">
         <%= simple_form_for [@raffle] do |f| %>
-          <%= f.input :category_name, collection: ['Electronics','Cars','Fashion','Jewelery', 'Experiences', 'Other']%>
+          <%= f.input :category_name, collection: Raffle::CATEGORIES%>
           <%= f.input :brand %>
           <%= f.input :model %>
           <%= f.input :color %>

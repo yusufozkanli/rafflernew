@@ -7,5 +7,6 @@ class Raffle < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
+  CATEGORIES = ['Electronics','Cars','Fashion','Jewelery', 'Experiences', 'Other']
 
 end
