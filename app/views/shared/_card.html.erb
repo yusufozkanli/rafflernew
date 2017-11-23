@@ -14,9 +14,7 @@
             <div class="info raffle-name">
             <p> <%= r.model %> </p>
             </div>
-            <div class="your-clock" data-ends-in-seconds="<%= r.time_left_in_seconds %>"></div>
-            <!-- <p> <%= r.end_date %> </p> -->
-
+            <div class="your-clock" data-ends-in-seconds="<%= (r.end_date - Time.now).to_i %>"></div>
           </div>
         <%= link_to "", raffle_path(r), class: "card-link"%>
         </div>

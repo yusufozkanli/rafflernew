@@ -19,14 +19,11 @@ class RafflesController < ApplicationController
   end
 
   def browse
-
-
     if params[:search]
       @raffles = Raffle.all.where("model iLIKE ?", "%#{params[:search]}%")
     elsif params[:category]
       @raffles = Raffle.all.where(category_name: params[:category])
     elsif params[:search] && params[:category]
-
     else
       @raffles = Raffle.all.where("status" == "open")
     end
@@ -49,7 +46,11 @@ class RafflesController < ApplicationController
   def update
     @raffle = Raffle.find(params[:id])
     @raffle.update(raffle_params)
-    redirect_to raffle_path(@raffle)
+    if @raffle.save
+      redirect_to raffle_path(@raffle)
+    else
+      render 'edit'
+    end
   end
 
   private

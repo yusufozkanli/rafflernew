@@ -11,7 +11,6 @@ import "bootstrap";
 import "flipclock/compiled/flipclock.js";
 
 import { loadDynamicBannerText } from '../components/banner';
-loadDynamicBannerText();
 
 console.log("hello")
 
