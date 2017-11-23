@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171123120653) do
+ActiveRecord::Schema.define(version: 20171123163834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20171123120653) do
     t.integer "price"
     t.string "color"
     t.text "description"
-    t.date "end_date"
+    t.datetime "end_date"
     t.integer "max_ticket"
     t.integer "min_ticket"
     t.string "status"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20171123120653) do
     t.datetime "updated_at", null: false
     t.string "photo"
     t.integer "ticket_quantity"
+    t.string "title"
     t.index ["user_id"], name: "index_raffles_on_user_id"
   end
 
