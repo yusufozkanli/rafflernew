@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:winner]
   before_action :set_raffle
 
   def new
