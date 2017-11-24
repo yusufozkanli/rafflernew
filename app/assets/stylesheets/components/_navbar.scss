@@ -84,8 +84,8 @@
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
   color: white !important;
-  text-decoration: underline $green;
 }
+
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
   height: 10px;
@@ -114,6 +114,7 @@
 
 .navbar-dropdown-icon {
   color: $green;
+  margin-left: 12px;
 }
 
 .navbar-ticket-counter {
