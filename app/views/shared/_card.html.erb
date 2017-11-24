@@ -14,7 +14,8 @@
             <div class="info raffle-name">
             <p> <%= r.model %> </p>
             </div>
-            <div class="your-clock" data-countdown="<%=r.end_date.to_i * 1000 %>"></div>
+            <div class="your-clock" style="color:#2bde73" data-countdown="<%=r.end_date.to_i * 1000 %>">
+            </div>
           </div>
         <%= link_to "", raffle_path(r), class: "card-link"%>
         </div>

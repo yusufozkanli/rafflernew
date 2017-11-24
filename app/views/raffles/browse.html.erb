@@ -2,17 +2,16 @@
  <div class="text-center" style="color:#2bde73; text-decoration:underline">
   <h2> ALL RAFFLES </h2>
   </div>
-     <div class="dropdown">
-          <button  style="background:white;margin-top:-80px;border-width: 0px", data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-filter" style="color: #2bde73"> view category</i>
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dLabel">
-            <% Raffle::CATEGORIES.each do |category_name| %>
-              <li><%= link_to category_name, browse_path(category: category_name) %></li>
-            <% end %>
-          </ul>
-        </div>
+    <div class="dropdown">
+      <button  style="background:white;margin-top:-80px;border-width: 0px", data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-filter" style="color: #2bde73"> view category</i>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dLabel">
+        <% Raffle::CATEGORIES.each do |category_name| %>
+          <li><%= link_to category_name, browse_path(category: category_name) %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
   <%= render 'shared/card' %>
