@@ -8,18 +8,28 @@
 // layout file, like app/views/layouts/application.html.erb
 import "bootstrap";
 
-import "flipclock/compiled/flipclock.js";
+require('jquery-countdown');
 
 import { loadDynamicBannerText } from '../components/banner';
-// loadDynamicBannerText();
+loadDynamicBannerText();
 console.log("hello")
 
 $('document').ready(function(){
-  $('.your-clock').each(function(){
-    var seconds = $(this).data('endsInSeconds');
-    var clock = $(this).FlipClock(seconds, {
-      countdown: true
-    });
+ $('[data-countdown]').each(function() {
+  var $this = $(this), finalDate = $(this).data('countdown');
+  $this.countdown(finalDate, function(event) {
+    if (event.offset.days === 0) {
+      $this.html(event.strftime('%H:%M:%S'));
+    } else {
+      $this.html(event.strftime('%-D day%!D %H:%M:%S'));
+    }
   });
+});
+  // $('.your-clock').each(function(){
+  // //   var seconds = $(this).data('endsInSeconds');
+  // //   var clock = $(this).FlipClock(seconds, {
+  // //     countdown: true
+  // //   });
+  // // });
 
 });
