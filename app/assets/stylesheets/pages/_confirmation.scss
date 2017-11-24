@@ -1,34 +1,42 @@
 .ticket-card {
-  width: 800px;
-  margin-right: auto;
-  margin-left: auto;
-  height: 480px;
-  background-color: $gray;
-  margin-top: 60px;
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+  margin-top: 25px;
+  background-size:  100% 100%;
+  margin-left: 68px;
 }
 
 .image-ticket-card {
   text-align: center;
-  position: relative;
-  top: 40px;
+  width: 100%;
+  height: auto;
+}
+
+.image-ticket-card img {
+  width: 300px;
+  margin-top: 45px;
 }
 
 .ticket-number {
   color: $green;
-  position: relative;
-  top: 30px;
-  font-size: 150%;
+  font-size: 170%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 25px;
 }
 
 .time-card {
   width: 500px;
-  margin-right: auto;
-  margin-left: auto;
-  height: 75px;
   background-color: #585858;
-  margin-top: 30px;
   border-radius: 7px;
+  margin-top: 25px;
 }
+
 
 
 

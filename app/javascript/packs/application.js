@@ -8,9 +8,18 @@
 // layout file, like app/views/layouts/application.html.erb
 import "bootstrap";
 
+import "flipclock/compiled/flipclock.js";
 
 import { loadDynamicBannerText } from '../components/banner';
-loadDynamicBannerText();
-
+// loadDynamicBannerText();
 console.log("hello")
 
+$('document').ready(function(){
+  $('.your-clock').each(function(){
+    var seconds = $(this).data('endsInSeconds');
+    var clock = $(this).FlipClock(seconds, {
+      countdown: true
+    });
+  });
+
+});
