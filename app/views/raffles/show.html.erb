@@ -38,6 +38,7 @@
         <h2> <%= @raffle.brand %></h2>
         <div class="your-clock" data-ends-in-seconds="<%= (Time.now - @raffle.end_date).to_i %>"></div>
         <%= render 'orders/new' %>
+          <div class="your-clock" data-ends-in-seconds="<%= (r.end_date - Time.now).to_i %>"></div>
       </div>
     </div>
 
