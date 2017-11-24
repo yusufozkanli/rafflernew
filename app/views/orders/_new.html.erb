@@ -1,10 +1,39 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-3 col-xs-offset-2">
-      <%= simple_form_for [@raffle, @order] do |f| %>
-      <%= f.input :quantity %>
-      <%= f.submit " 1 ticket", class: "btn-buy" %>
-      <% end %>
+      <div class="form-flex">
+        <%= simple_form_for [@raffle, @order] do |f| %>
+        <input type="button" onclick="decrementValue()" value="-" class="btn-minus" />
+        <%= f.submit id: "number", value: "0", class: "btn-buy"  %>
+        <input type="button" onclick="incrementValue()" value="+" class="btn-plus" />
+        <%= f.hidden_field :quantity %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+  function incrementValue()
+  {
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById('number').value = value;
+}
+
+  function decrementValue()
+  {
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value--;
+    document.getElementById('number').value = value;
+}
+
+</script>
+
+
+
+
+
+
