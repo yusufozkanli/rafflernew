@@ -11,7 +11,10 @@ import "bootstrap";
 require('jquery-countdown');
 
 import { loadDynamicBannerText } from '../components/banner';
-loadDynamicBannerText();
+
+if (document.getElementById('banner-typed-text') != null) {
+  loadDynamicBannerText();
+}
 console.log("hello")
 
 $('document').ready(function(){
