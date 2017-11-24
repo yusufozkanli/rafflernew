@@ -1,7 +1,7 @@
 class Raffle < ApplicationRecord
   belongs_to :user
   has_many :orders
-  validates :color, :description, :end_date, :ticket_quantity, presence: true
+  validates :title, :description, :end_date, :ticket_quantity, presence: true
 
   mount_uploader :photo, PhotoUploader
 
