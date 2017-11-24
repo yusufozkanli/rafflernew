@@ -84,6 +84,7 @@
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
   color: white !important;
+  text-decoration: underline $green;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
@@ -142,4 +143,5 @@
 
 .navbar-search {
   margin-left: 20px;
+  size: 70px
 }
