@@ -8,6 +8,7 @@
       Raffler
     <% end %>
 
+
     <%= form_tag browse_path, :method => 'get' do %>
       <div class="navbar-search">
         <input type="text" name="search" id="search" class="navbar-search-field" placeholder="Search">
@@ -19,14 +20,12 @@
   </div>
 
 
-
-
   <!-- Right Navigation -->
     <div class="navbar-wagon-right">
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item navbar-ticket-item">
         <% if user_signed_in? %>
-            <div class="navbar-ticket-counter"># You have 1 ticket
+            <div class="navbar-ticket-counter"> # You have 1 ticket
             </div>
             <%= link_to "Buy Tickets", "#", class: "navbar-wagon-item btn-success navbar-buy-tickets" %>
           </div>
