@@ -7,22 +7,16 @@
     <%= link_to root_path, class: "navbar-raffler-title" do %>
       Raffler
     <% end %>
-<!--     <a href= class="navbar-raffler-title">Raffler</a> -->
-<!-- <form action="/browse" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
-      <div class="navbar-search">
 
-        <button name="button" type="submit">
-          <i class="fa fa-search search-icon"></i>
-</button>      </div>
-</form> -->
     <%= form_tag browse_path, :method => 'get' do %>
       <div class="navbar-search">
-        <input type="text" name="search" id="search" class="navbar-search-field">
-        <%= button_tag do %>
+        <input type="text" name="search" id="search" class="navbar-search-field" placeholder="Search">
+        <%= button_tag(class: "navbar-button") do %>
           <i class="fa fa-search search-icon"></i>
         <% end %>
       </div>
     <% end %>
+  </div>
 
 
 
@@ -99,6 +93,7 @@
     </div>
   </div>
 </div>
+
 
 
 

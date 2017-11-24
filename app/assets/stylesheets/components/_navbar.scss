@@ -129,10 +129,16 @@
 .search-icon {
   font-size: 22px;
   margin-right: 10px;
-}
+  background-color: $gray;
+ }
+
+.navbar-button {
+  background-color: $gray;
+  border: none;
+ }
 
 .navbar-search-field {
-  background-color: transparent;
+  background-color: $gray;
   border-style: none;
   color: $light-gray;
   outline: none !important;
@@ -143,3 +149,4 @@
 .navbar-search {
   margin-left: 20px;
 }
+
