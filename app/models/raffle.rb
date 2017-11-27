@@ -2,7 +2,8 @@ class Raffle < ApplicationRecord
   belongs_to :user
   has_many :orders
   validates :title, :description, :end_date, :ticket_quantity, presence: true
-  after_save :set_winner_draw_job
+  after_create :set_winner_draw_job
+
 
   mount_uploader :photo, PhotoUploader
 
@@ -16,7 +17,9 @@ class Raffle < ApplicationRecord
 
 
   def set_winner_draw_job
-    PickWinnerJob.set(wait_until: self.end_date).perform_later(self)
+    if self.status == "active"
+      PickWinnerJob.set(wait_until: self.end_date).perform_later(self)
+    end
   end
 
 end
