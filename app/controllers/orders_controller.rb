@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
     @order.user_id = current_user.id
     @order.raffle_id = @raffle.id
     @order.ticket_number = set_ticket_number
+    @order.price_pennies = 100 * @order.quantity
     if @order.save
       @raffle.available_tickets -= 1
       @raffle.save

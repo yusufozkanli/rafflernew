@@ -10,13 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20171127175425) do
-=======
-
-ActiveRecord::Schema.define(version: 20171127175425) do
-
->>>>>>> 6be34205d7485e281b93396533fbc01aa4266477
+ActiveRecord::Schema.define(version: 20171127214315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +25,7 @@ ActiveRecord::Schema.define(version: 20171127175425) do
     t.datetime "updated_at", null: false
     t.string "ticket_number"
     t.boolean "won", default: false
+    t.integer "price_pennies", default: 0, null: false
     t.index ["raffle_id"], name: "index_orders_on_raffle_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
@@ -47,7 +42,6 @@ ActiveRecord::Schema.define(version: 20171127175425) do
     t.string "category_name"
     t.string "brand"
     t.string "model"
-    t.integer "price"
     t.string "color"
     t.text "description"
     t.datetime "end_date"
@@ -59,15 +53,8 @@ ActiveRecord::Schema.define(version: 20171127175425) do
     t.string "photo"
     t.integer "ticket_quantity"
     t.string "title"
-<<<<<<< HEAD
     t.integer "price_pennies", default: 0, null: false
-=======
-
-    t.integer "price_pennies", default: 0, null: false
-
->>>>>>> 6be34205d7485e281b93396533fbc01aa4266477
     t.integer "available_tickets"
-
     t.index ["user_id"], name: "index_raffles_on_user_id"
   end
 

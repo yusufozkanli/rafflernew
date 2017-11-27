@@ -11,6 +11,7 @@ gem 'redis'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'money-rails'
+gem 'stripe'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
