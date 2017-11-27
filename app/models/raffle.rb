@@ -19,14 +19,4 @@ class Raffle < ApplicationRecord
     PickWinnerJob.set(wait_until: self.end_date).perform_later(self)
   end
 
-  # while true do
-  #   raffles = Raffle.where("end_date <= '#{Time.now}'")
-  #   raffles.each do |raffle|
-  #     x = draw_ticketnumber(raffle)
-  #     update_order(x)
-  #     raffle.status = "completed"
-  #   end
-  #   sleep 100
-  # end
-
 end

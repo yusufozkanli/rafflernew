@@ -6,6 +6,8 @@ class PickWinnerJob < ApplicationJob
 
   def draw_ticketnumber(raffle)
     raffle_tickets = []
+    raffle.status = "Completed"
+    raffle.save
     raffle.orders.each do |o|
       raffle_tickets << o.ticket_number
     end
