@@ -7,7 +7,7 @@
           <%= cl_image_tag r.photo, class: "img-show", crop: :fill, style: "width: 260px; height: 175px;" %>
         </div>
         <div class="card-bar">
-          <div class="card-bar-green">
+          <div class="card-bar-green" style="width: <%= (r.available_tickets.to_f / r.ticket_quantity * 100).to_i %>%">
           </div>
         </div>
         <div class="card-info">
