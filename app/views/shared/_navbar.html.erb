@@ -25,9 +25,9 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item navbar-ticket-item">
         <% if user_signed_in? %>
-            <div class="navbar-ticket-counter"> # You have 1 ticket
+            <div class="navbar-ticket-counter">
             </div>
-            <%= link_to "Buy Tickets", "#", class: "navbar-wagon-item btn-success navbar-buy-tickets" %>
+            <%= link_to "Create a Raffle", "raffles/new", class: "navbar-wagon-item navbar-create-button" %>
           </div>
           <div class="dropdown">
             <% if current_user.photo? %>
@@ -59,12 +59,13 @@
             </ul>
           </div>
         <% else %>
+
+            <%= link_to "Create a Raffle", "raffles/new", class: "navbar-wagon-item navbar-create-button" %>
         <a class= "navbar-wagon-item navbar-wagon-link", data-toggle = "modal" , data-target ="#myModal2"> Sign In </a>
         <a class= "navbar-wagon-item navbar-wagon-link", data-toggle = "modal" , data-target ="#myModal"> Sign Up </a>
         <% end %>
       </div>
     </div>
-
   <!-- Dropdown list appearing on mobile only -->
 </div>
 
