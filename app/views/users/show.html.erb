@@ -11,11 +11,23 @@
       </div>
 
       <div class="user-raffles">
-        <div class="views">
-          <p> Views: </p>
-          <p class="linka"> Participant </p>
-          <p class="linka"> Organizer </p>
-        </div>
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <%= link_to "participant", user_path(@user, tab: "participant") %>
+            <!-- <a class="nav-link active" href="#" id="participant_tab">Participant</a> -->
+          </li>
+          <li class="nav-item">
+            <%= link_to "organiser", user_path(@user, tab: "organiser") %>
+          </li>
+        </ul>
+
+
+
+
+
+
+
+
         <div class="underviews">
           <div class="titles">
             <div class="title green">
@@ -25,10 +37,11 @@
               <p>Past Raffles</p>
             </div>
           </div>
-          <%= render 'shared/card3' %>
+          <%= render 'shared/card3', raffles: @raffles %>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<%= javascript_pack_tag 'dashboard' %>
