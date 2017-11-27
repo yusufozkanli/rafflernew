@@ -1,12 +1,11 @@
 .rafflebox {
-  height: 150vh;
   width: 100%;
   display: flex;
+  background-color: $gray;
 }
 
-.rightbox {
-  height: 100%;
-  width: 50%;
+.leftbox {
+  flex: 0 0 50%;
   background-color: $white;
   position: relative;
 }
@@ -18,43 +17,56 @@
 }
 
 .image-container {
-  height: calc(100vh - 70px);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.image-item {
+  margin: 20px;
 }
 
 .raffle-info {
-  position: absolute;
-  top: 60%;
-  width: 100%;
-  height: 300px;
-  background-color: $light-gray;
   color: black;
+  padding: 20px;
+  span {
+    opacity: 0.5;
+    font-weight: 100;
+  }
 }
 
-.leftbox {
-  height: 100%;
-  width: 50%;
+.rightbox {
+  height: calc(100vh - 70px);
+  flex: 0 0 50%;
   background-color: $gray;
   color: white;
-  position:relative
+  margin-right: 0px;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  span {
+    opacity: 0.3;
+    font-weight: 100;
+  }
 }
 
 .raffle-image {
-  width: 400px;
   height: 400px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  border-radius: 4px;
 }
 
 .user-avatar {
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
 }
 
-.leftbox-content {
-  margin-top: 150px;
-  position: sticky;
-  top: 20%;
-  left: 30%;
+.rightbox-content {
   font-size: 26px;
 }
 
@@ -72,6 +84,15 @@
 .btn-buy:hover {
    border: 2px solid white;
    transition: border 0.2s ease;
+}
+
+.btn-plus-minus {
+  border-radius: 50%;
+  background-color: $green;
+  width: 40px;
+  height: 40px;
+  border: none;
+  margin: 5px;
 }
 
 .img-show {

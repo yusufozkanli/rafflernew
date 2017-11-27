@@ -1,16 +1,16 @@
 .card-bar {
-  height: 6px;
-  width: 90%;
+  height: 10px;
+  width: 400px;
   background-color: white;
-  margin: 15px 15px;
+  margin: 15px 0px;
   border-radius: 3px;
- border: 0.5px solid #e8e8e8;
+  border: 0.5px solid #e8e8e8;
 }
 
 
 .card-bar-green {
   border-radius: 3px;
-  height: 4px;
+  height: 8px;
   width: 70%;
   background-color: $green;
 }
