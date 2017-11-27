@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20171127175425) do
+=======
+
+ActiveRecord::Schema.define(version: 20171127175425) do
+
+>>>>>>> 6be34205d7485e281b93396533fbc01aa4266477
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,8 +59,15 @@ ActiveRecord::Schema.define(version: 20171127175425) do
     t.string "photo"
     t.integer "ticket_quantity"
     t.string "title"
+<<<<<<< HEAD
     t.integer "price_pennies", default: 0, null: false
+=======
+
+    t.integer "price_pennies", default: 0, null: false
+
+>>>>>>> 6be34205d7485e281b93396533fbc01aa4266477
     t.integer "available_tickets"
+
     t.index ["user_id"], name: "index_raffles_on_user_id"
   end
 
