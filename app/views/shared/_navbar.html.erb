@@ -27,7 +27,7 @@
         <% if user_signed_in? %>
             <div class="navbar-ticket-counter">
             </div>
-            <%= link_to "Create a Raffle", "raffles/new", class: "navbar-wagon-item navbar-create-button" %>
+            <%= link_to "Create a Raffle", "/raffles/new", class: "navbar-wagon-item navbar-create-button" %>
           </div>
           <div class="dropdown">
             <% if current_user.photo? %>
