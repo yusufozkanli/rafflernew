@@ -3,6 +3,7 @@ class Raffle < ApplicationRecord
   has_many :orders
   validates :title, :description, :end_date, :ticket_quantity, presence: true
   after_create :set_winner_draw_job
+  monetize :price_cents
 
   mount_uploader :photo, PhotoUploader
 
