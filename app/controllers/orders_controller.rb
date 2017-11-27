@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
     @order.raffle_id = @raffle.id
     @order.ticket_number = set_ticket_number
     if @order.save
-      @raffle.ticket_quantity -= 1
+      @raffle.available_tickets -= 1
       @raffle.save
       redirect_to raffle_order_confirmation_path(@raffle, @order)
     else
