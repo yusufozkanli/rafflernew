@@ -1,4 +1,4 @@
-
+<div class="container">
   <div class="rafflebox">
 
     <div class="leftbox">
@@ -20,29 +20,29 @@
             <div class="card-bar">
               <div class="card-bar-green"></div>
               <div class="tickets-left text-left">
-                <p> 1000 / <%= @raffle.max_ticket %> tickets left </p>
+                <p> <%= @raffle.available_tickets %> / <%= @raffle.ticket_quantity %> tickets left </p>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="user-avatar">
+          <div class="user-avatar-left">
+          </div>
+          <div class="user-avatar-right">
+            <img src="https://www.aptitudesoftware.com/wp-content/uploads/Round-profile-2.png" style="width:70px;height:70px;">
+            <%= link_to "#{@raffle.user.email}", user_path(@user) %>
+          </div>
+        </div>
       </div>
 
-      <div class="user-avatar">
-        <div class="user-avatar-left">
-        </div>
-        <div class="user-avatar-right">
-          <img src="https://www.aptitudesoftware.com/wp-content/uploads/Round-profile-2.png" style="width:70px;height:70px;">
-          <%= link_to "#{@raffle.user.email}", user_path(@user) %>
-        </div>
-      </div>
-    </div>
 
-
-    <div class="rightbox">
-      <div class="rightbox-content text-center">
-        <div class="your-clock" style="color: #2bde73" " data-countdown="<%= @raffle.end_date.to_i * 1000 %>"></div>
-        <h2><span><%= @raffle.brand %> <%= @raffle.model %></span></h2>
-        <%= render 'orders/new' %>
+      <div class="rightbox">
+        <div class="rightbox-content">
+          <div class="your-clock" style="color: #2bde73" " data-countdown="<%= @raffle.end_date.to_i * 1000 %>"></div>
+          <h1 style="color: black"; "font-size:30px"><span><%= @raffle.title %></span></h1>
+          <%= render 'orders/new' %>
+        </div>
       </div>
     </div>
   </div>
