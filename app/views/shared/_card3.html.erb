@@ -7,7 +7,9 @@
           <%= cl_image_tag r.photo, class: "img-show", crop: :fill, style: "width: 150px; height: 100px;" %>
         </div>
         <div class="top-bar-icons">
-        <%= link_to "", edit_raffle_path(r) , class: "fa fa-pencil raffle-edit" %>
+          <% if r.user == current_user  %>
+            <%= link_to "", edit_raffle_path(r) , class: "fa fa-pencil raffle-edit" %>
+          <% end %>
         </div>
         <div class="card-bar">
           <div class="card-bar-green">
