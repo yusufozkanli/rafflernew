@@ -2,7 +2,7 @@ class RafflesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :browse]
 
   def index
-    @raffles = Raffle.last(3)
+    @raffles = Raffle.where("status = 'active'").last(3)
     @raffles_ending = Raffle.where("end_date = '#{Date.today}'")
     won_orders = Order.where(won: true)
     @orders = won_orders.last(3)
@@ -25,7 +25,7 @@ class RafflesController < ApplicationController
       @raffles = Raffle.all.where(category_name: params[:category])
     elsif params[:search] && params[:category]
     else
-      @raffles = Raffle.all.where("status" == "open")
+      @raffles = Raffle.where("status = 'active'")
     end
   end
 

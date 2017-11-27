@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20171123163834) do
     t.datetime "end_date"
     t.integer "max_ticket"
     t.integer "min_ticket"
-    t.string "status"
+    t.string "status", default: "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"

@@ -11,7 +11,7 @@ class CreateRaffles < ActiveRecord::Migration[5.1]
       t.date :end_date
       t.integer :max_ticket
       t.integer :min_ticket
-      t.string :status
+      t.string :status, :default => "active"
       t.timestamps
     end
   end
