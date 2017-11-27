@@ -2,6 +2,7 @@ class Raffle < ApplicationRecord
   belongs_to :user
   has_many :orders
   validates :title, :description, :end_date, :ticket_quantity, presence: true
+  after_save :set_winner_draw_job
 
   mount_uploader :photo, PhotoUploader
 
@@ -14,35 +15,18 @@ class Raffle < ApplicationRecord
   CATEGORIES = ['Electronics','Cars','Fashion','Jewelery', 'Experiences', 'Other']
 
 
-  #### WINNING ALGORITHM #####
-
-  def draw_ticketnumber(raffle)
-    raffle_tickets = []
-    raffle.orders each do |o|
-      raffle_tickets << o.ticket_number
-    end
-    x = raffle_tickets.length - 1
-    return raffle_tickets[rand(0..x)]
+  def set_winner_draw_job
+    PickWinnerJob.set(wait_until: self.end_date).perform_later(self)
   end
 
-
-  def update_order(x)
-    order = Order.where("ticket_number = '#{x}'").first
-    order.won = true
-    order.save
-    return order
-    # The person who has won will receive an email.
-  end
-
-
-  while true do
-    raffles = Raffle.where("end_date <= '#{Time.now}'")
-    raffles.each do |raffle|
-      x = draw_ticketnumber(raffle)
-      update_order(x)
-      raffle.status = "completed"
-    end
-    sleep 100
-  end
+  # while true do
+  #   raffles = Raffle.where("end_date <= '#{Time.now}'")
+  #   raffles.each do |raffle|
+  #     x = draw_ticketnumber(raffle)
+  #     update_order(x)
+  #     raffle.status = "completed"
+  #   end
+  #   sleep 100
+  # end
 
 end
