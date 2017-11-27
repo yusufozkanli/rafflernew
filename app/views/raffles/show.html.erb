@@ -1,27 +1,26 @@
 <div class="container">
   <div class="rafflebox">
 
-      <div class="leftbox">
-<!--
-        <div class="raffle-info">
-          <div class="raffle-info-content">
-            <p><span> Category: <%= @raffle.category_name %> </span></p>
-            <p><span> Brand: <%= @raffle.brand %> </span></p>
-            <p><span> Color: <%= @raffle.color %> </span></p>
-            <p><span> Description: <%= @raffle.description %> </span></p>
-          </div> -->
+    <div class="leftbox">
 
-       <!--  </div> -->
+      <div class="raffle-info">
+        <div class="raffle-info-content">
+          <p><span> Category: <%= @raffle.category_name %> </span></p>
+          <p><span> Brand: <%= @raffle.brand %> </span></p>
+          <p><span> Color: <%= @raffle.color %> </span></p>
+          <p><span> Description: <%= @raffle.description %> </span></p>
+        </div>
 
-        <div class="image-container">
-          <div class="image-item">
-            <div class="raffle-image" style="background-image: url(<%= cl_image_path @raffle.photo, crop: :fill, width: 400; %>)"></div>
-            <div class="raffle-bar">
-              <div class="card-bar-show">
-                <div class="card-bar-green-show"></div>
-                <div class="tickets-left text-left">
-                  <p> 1000 / <%= @raffle.max_ticket %> tickets left </p>
-                </div>
+      </div>
+
+      <div class="image-container">
+        <div class="image-item">
+          <div class="raffle-image" style="background-image: url(<%= cl_image_path @raffle.photo, crop: :fill, width: 400; %>)"></div>
+          <div class="raffle-bar">
+            <div class="card-bar">
+              <div class="card-bar-green"></div>
+              <div class="tickets-left text-left">
+                <p> <%= @raffle.available_tickets %> / <%= @raffle.ticket_quantity %> tickets left </p>
               </div>
             </div>
           </div>
