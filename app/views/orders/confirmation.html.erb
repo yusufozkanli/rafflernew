@@ -1,17 +1,18 @@
-<div class="container">
-  <div class="ticket-card" style="background-image: url('<%= image_path 'design-raffler.png' %>')";>
-  <div class="image-ticket-card">
-    <%= image_tag 'ticket.png' %>
-  </div>
-    <div class="ticket-number">
-      <p><strong>Your ticket number is :</strong>
-        <br> <%= @order.ticket_number.first %>
-      </p>
-      <div class="time-card">
-        <p><strong style="line-height: 3;">
-          <div class="your-clock" style="color:#2bde73" data-countdown="<%=@raffle.end_date.to_i * 1000 %>">
-            </div> </strong></p>
+
+  <div class="container">
+    <div class="ticket-card" style="background-image: url('<%= image_path 'design-raffler.png' %>')";>
+    <div class="image-ticket-card">
+      <%= image_tag 'ticket.png' %>
+    </div>
+      <div class="ticket-number">
+        <p><strong>Your ticket number is :</strong>
+          <br> <%= @order.ticket_number %>
+        </p>
+        <div class="time-card">
+          <p><strong style="line-height: 3;">
+            <div class="your-clock" style="color:#2bde73" data-countdown="<%=@raffle.end_date.to_i * 1000 %>">
+              </div> </strong></p>
+        </div>
       </div>
     </div>
   </div>
-</div>

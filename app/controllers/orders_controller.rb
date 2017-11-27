@@ -41,9 +41,8 @@ class OrdersController < ApplicationController
   end
 
   def set_ticket_number
-    ticket_numbers = []
-    ticket_numbers << 10.times.map{rand(10)}.join
-    return ticket_numbers
+    ticket_number = 10.times.map{rand(10)}.join
+    return ticket_number
   end
 
 end
