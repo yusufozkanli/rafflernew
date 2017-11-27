@@ -20,7 +20,7 @@
             <div class="card-bar">
               <div class="card-bar-green"></div>
               <div class="tickets-left text-left">
-                <p> 1000 / <%= @raffle.max_ticket %> tickets left </p>
+                <p> <%= @raffle.available_tickets %> / <%= @raffle.ticket_quantity %> tickets left </p>
               </div>
             </div>
           </div>
