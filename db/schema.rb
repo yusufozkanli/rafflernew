@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20171127161918) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "ticket_number", default: [], array: true
+    t.string "ticket_number"
     t.boolean "won", default: false
     t.index ["raffle_id"], name: "index_orders_on_raffle_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
@@ -45,9 +45,7 @@ ActiveRecord::Schema.define(version: 20171127161918) do
     t.string "color"
     t.text "description"
     t.datetime "end_date"
-    t.integer "max_ticket"
-    t.integer "min_ticket"
-    t.string "status"
+    t.string "status", default: "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
