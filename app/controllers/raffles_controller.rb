@@ -53,10 +53,12 @@ class RafflesController < ApplicationController
     end
   end
 
+
   private
 
   def raffle_params
   params.require(:raffle).permit(:title, :category_name, :brand, :model, :color, :price, :description, :end_date, :ticket_quantity, :photo)
   end
+
 
 end
