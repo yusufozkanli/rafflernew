@@ -1,46 +1,43 @@
- <div class="rafflebox">
+<div class="container">
+  <div class="rafflebox">
 
     <div class="leftbox">
+      <!-- <div class="raffle-info">
+          <div class="raffle-info-content">
+            <p><span> Category: <%= @raffle.category_name %> </span></p>
+            <p><span> Category: <%= @raffle.model %> </span></p>
+            <p><span> Brand: <%= @raffle.brand %> </span></p>
+            <p><span> Color: <%= @raffle.color %> </span></p>
+            <p><span> Description: <%= @raffle.description %> </span></p>
+          </div>
 
-      <div class="raffle-info">
-        <div class="raffle-info-content">
-          <p><span> Category: <%= @raffle.category_name %> </span></p>
-          <p><span> Brand: <%= @raffle.brand %> </span></p>
-          <p><span> Color: <%= @raffle.color %> </span></p>
-          <p><span> Description: <%= @raffle.description %> </span></p>
-        </div>
+        </div> -->
 
-      </div>
-
-      <div class="image-container">
-        <div class="image-item">
-          <div class="raffle-image" style="background-image: url(<%= cl_image_path @raffle.photo, crop: :fill, width: 400; %>)"></div>
-          <div class="raffle-bar">
-            <div class="card-bar">
-              <div class="card-bar-green"></div>
-              <div class="tickets-left text-left">
-              </div>
+          <div class="image-item">
+            <div class="raffle-image" style="background-image: url(<%= cl_image_path @raffle.photo, crop: :fill, width: 400; %>)">
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="user-avatar">
-        <div class="user-avatar-left">
+
+      <!--   <div class="user-avatar">
+          <div class="user-avatar-left">
+          </div>
+          <div class="user-avatar-right">
+            <img src="https://www.aptitudesoftware.com/wp-content/uploads/Round-profile-2.png" style="width:70px;height:70px;">
+            <%= link_to "#{@raffle.user.email}", user_path(@user) %>
+          </div>
         </div>
-        <div class="user-avatar-right">
-          <img src="https://www.aptitudesoftware.com/wp-content/uploads/Round-profile-2.png" style="width:70px;height:70px;">
-          <%= link_to "#{@raffle.user.email}", user_path(@user) %>
+      </div> -->
+
+
+      <div class="rightbox">
+        <div class="rightbox-content text-left">
+          <div class="your-clock" style="color: #2bde73" " data-countdown="<%= @raffle.end_date.to_i * 1000 %>"></div>
+           <h2><span><%= @raffle.title %></span></h2>
+          <%= render 'orders/new' %>
         </div>
       </div>
     </div>
+</div>
 
-
-    <div class="rightbox">
-      <div class="rightbox-content text-center">
-        <div class="your-clock" style="color: #2bde73" " data-countdown="<%= @raffle.end_date.to_i * 1000 %>"></div>
-        <h2><span><%= @raffle.brand %> <%= @raffle.model %></span></h2>
-        <%= render 'orders/new' %>
-      </div>
-    </div>
-  </div>
