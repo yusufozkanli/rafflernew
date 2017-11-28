@@ -2,7 +2,7 @@
  <% raffles.each do |r| %>
   <div class="col-xs-4 col-sm-3">
     <%= link_to raffle_path(r) do %>
-      <div class="card grow">
+      <div class="card3 grow">
         <div class="image">
           <%= cl_image_tag r.photo, class: "img-show", crop: :fill, style: "width: 150px; height: 100px;" %>
         </div>
@@ -11,8 +11,8 @@
             <%= link_to "", edit_raffle_path(r) , class: "fa fa-pencil raffle-edit" %>
           <% end %>
         </div>
-        <div class="card-bar">
-          <div class="card-bar-green" style="width: <%= (r.available_tickets.to_f / r.ticket_quantity * 100).to_i %>%">
+        <div class="card-bar-dashboard">
+          <div class="card-bar-green-dashboard" style="width: <%= (r.available_tickets.to_f / r.ticket_quantity * 100).to_i %>%">
           </div>
         </div>
         <div class="card-info">
