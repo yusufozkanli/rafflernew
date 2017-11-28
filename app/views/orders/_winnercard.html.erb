@@ -3,8 +3,9 @@
      <% @orders.each do |o| %>
       <div class="col-xs-4 col-sm-3">
         <div class="card">
-          <div class="image">
-            <%= cl_image_tag o.raffle.photo, class: "img-show", crop: :fill, style: "width: 260px; height: 175px;" %>
+          <div class="image" id="winner-image-box">
+            <%= cl_image_tag o.raffle.photo, id: "winner-image", class: "img-show", crop: :fill, style: "width: 260px; height: 175px;" %>
+            <p class="image-text"> Completed </p>
           </div>
             <div class="card-info">
               <div class="info raffle-name">
