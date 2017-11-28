@@ -1,12 +1,16 @@
 
   <div class="form-flex">
     <div class="btn-box">
-    <%= simple_form_for [@raffle, @order] do |f| %>
-    <input type="button" onclick="decrementValue()" value="-" class="btn-plus-minus" />
-    <input type="button" id="number" value="1 ticket" class="btn-buy" name="quantity">
-    <input type="button" onclick="incrementValue()" value="+" class="btn-plus-minus" />
-    <%= f.hidden_field :quantity, id: "quantity-value", value: 1 %>
-    <%= f.submit class: "btn btn-primary" %>
+    <% if @raffle.user == current_user %>
+      <p>You are the owner of this Raffle</p>
+    <% else %>
+      <%= simple_form_for [@raffle, @order] do |f| %>
+       <input type="button" onclick="decrementValue()" value="-" class="btn-plus-minus" />
+       <input type="button" id="number" value="1 ticket" class="btn-buy" name="quantity">
+       <input type="button" onclick="incrementValue()" value="+" class="btn-plus-minus" />
+       <%= f.hidden_field :quantity, id: "quantity-value", value: 1 %>
+        <%= f.submit class: "btn btn-primary" %>
+      <% end %>
     <% end %>
     </div>
   </div>

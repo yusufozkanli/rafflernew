@@ -6,14 +6,12 @@ class UsersController < ApplicationController
   def show
     raffles_to_display = []
 
-    if params[:tab] == "participant"
+    if params[:tab] == "Participant"
       @user.orders.each do |order|
         order.raffle.user_id != @user.id ? raffles_to_display << order.raffle : nil
       end
-    elsif params[:tab] == "organiser"
-      @user.orders.each do |order|
-        order.raffle.user_id == @user.id ? raffles_to_display << order.raffle : nil
-        end
+    elsif params[:tab] == "Organiser"
+      raffles_to_display = @user.raffles
     end
     @raffles = raffles_to_display
   end
