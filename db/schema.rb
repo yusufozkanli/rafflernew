@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20171127225121) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.integer "max_ticket"
+    t.integer "min_ticket"
     t.integer "ticket_quantity"
     t.string "title"
     t.integer "available_tickets"
