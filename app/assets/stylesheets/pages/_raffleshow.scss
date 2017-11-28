@@ -18,7 +18,7 @@ padding: 12px
 }
 
 .btn-box {
-  background: white;
+  background: #f1f1f1;
   border-radius: 4px;
   width: auto;
   margin: 0;
@@ -49,7 +49,7 @@ form.new_order {
 // }
 
 .image-item {
-  width: 420px;
+  width: 550px;
   height: 400px; /* exact height to center vertically */
 }
 
@@ -74,7 +74,6 @@ form.new_order {
 }
 
 .raffle-image {
-  background: blue;
   height: 400px;
   background-size: cover;
   background-position: center;
@@ -98,7 +97,7 @@ form.new_order {
 }
 
 .btn-buy {
-  background: white;
+  background: #f1f1f1;
   width: 100%;
   height: 64px;
   font: 20px;
@@ -113,13 +112,14 @@ form.new_order {
 .btn-plus-minus {
   color: $green;
   border-radius: 4;
-  background-color: white;
-  width: 54px;
-  height: 54px;
-  margin: 0;
-  border: 2px solid white;
+  background-color: #f1f1f1;
+  width: 63px;
+  height: 65px;
+  border: 0px solid white;
   &:hover {
    color: $green;
+
+
   }
 }
 
@@ -140,7 +140,7 @@ form.new_order {
 .btn-grow:hover { transform: scale(1.25); }
 
 .img-show {
-  border-radius: 8px;
+  border-radius: 7px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   background-size: cover;
 }

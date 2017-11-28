@@ -1,9 +1,9 @@
 
   <div class="form-flex">
-    <div class="btn-box">
     <% if @raffle.user == current_user %>
       <p>You are the owner of this Raffle. You can edit it on your dashboard</p>
     <% else %>
+    <div class="btn-box">
       <%= simple_form_for [@raffle, @order] do |f| %>
        <input type="button" onclick="decrementValue()" value="-" class="btn-plus-minus" />
        <input type="button" id="number" value="1 ticket" class="btn-buy" name="quantity">
