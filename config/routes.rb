@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   get "/commands/:order_id", to: "commands#show", as: :commands
-  post "/commands/:order_id", to: "commands#create", as: :commands_create
+  get "/commands/:order_id", to: "commands#create_command", as: :commands_create
 
 
   resources :users, only: [ :show, :update, :edit ]

@@ -14,7 +14,7 @@
       </div>
     </div>
   </div>
-  <%= form_tag commands_create:"||}{POO<>?(@order.id) do %>
+  <%= form_tag commands_create_path(@order.id) do %>
   <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
   <% end %>
   <div class="message">
