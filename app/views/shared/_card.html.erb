@@ -17,7 +17,7 @@
               </div>
             </div>
             <div class="card-bar">
-              <div class="card-bar-green" style="width: <%= (r.available_tickets.to_f / r.ticket_quantity * 100).to_i %>">
+              <div class="card-bar-green" style="width: <%= (r.available_tickets.to_f / r.ticket_quantity * 100).to_i %>%">
               </div>
               <p class="ticketquantity" style="color:#2bde73"> <%= r.available_tickets %> / <%= r.ticket_quantity %>tickets left
               </p>
