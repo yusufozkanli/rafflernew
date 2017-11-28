@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
     @order.ticket_number = set_ticket_number
     @order.price_pennies = 100 * @order.quantity
     if @order.save
-      @raffle.available_tickets -= 1
+      @raffle.available_tickets -= @order.quantity
       @raffle.save
       command = Command.create!(order_sku: @order.sku, amount: @order.price, state: 'pending', order: @order)
       redirect_to new_command_payment_path(command)
