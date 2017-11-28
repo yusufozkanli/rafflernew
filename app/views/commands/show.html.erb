@@ -1,0 +1,6 @@
+<h1>Command</h1>
+<ul>
+  <li>Status: <%= @command.state %></li>
+  <li>Item: <%= @command.order_sku %></li>
+  <li>Amount: <%= humanized_money_with_symbol(@command.amount) %></li>
+<ul>

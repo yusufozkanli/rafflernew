@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171127175425) do
+
+ActiveRecord::Schema.define(version: 20171127225121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "commands", force: :cascade do |t|
+    t.string "state"
+    t.string "order_sku"
+    t.integer "amount_pennies", default: 0, null: false
+    t.json "payment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "orders", force: :cascade do |t|
     t.bigint "raffle_id"
@@ -25,6 +35,8 @@ ActiveRecord::Schema.define(version: 20171127175425) do
     t.datetime "updated_at", null: false
     t.string "ticket_number"
     t.boolean "won", default: false
+    t.integer "price_pennies", default: 0, null: false
+    t.string "sku"
     t.index ["raffle_id"], name: "index_orders_on_raffle_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
@@ -41,7 +53,6 @@ ActiveRecord::Schema.define(version: 20171127175425) do
     t.string "category_name"
     t.string "brand"
     t.string "model"
-    t.integer "price"
     t.string "color"
     t.text "description"
     t.datetime "end_date"
