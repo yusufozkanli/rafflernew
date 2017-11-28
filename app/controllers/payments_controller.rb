@@ -18,7 +18,7 @@ class PaymentsController < ApplicationController
   )
 
   @command.update(payment: charge.to_json, state: 'paid')
-  redirect_to command_path(@command)
+  redirect_to raffle_order_confirmation_path(@command.order.raffle, @command.order)
 
 rescue Stripe::CardError => e
   flash[:alert] = e.message

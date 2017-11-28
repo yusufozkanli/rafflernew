@@ -25,10 +25,18 @@ class PickWinnerJob < ApplicationJob
   end
 
   def perform(raffle)
-    puts raffle
-    puts "Drawing Ticket..."
-    ticket_no = draw_ticketnumber(raffle)
-    puts "Updating winning order"
-    update_order(ticket_no)
+    if raffle.available_tickets == 0
+      puts raffle
+      puts "Drawing Ticket..."
+      ticket_no = draw_ticketnumber(raffle)
+      puts "Updating winning order"
+      update_order(ticket_no)
+    else
+      puts "Incomplete Raffle..."
+      raffle.status = "Incomplete Raffle"
+      raffle.save
+      puts "Raffle marked incomplete..."
+    end
   end
-end
+
+  end
