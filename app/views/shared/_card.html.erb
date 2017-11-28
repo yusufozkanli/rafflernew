@@ -1,27 +1,30 @@
-<div class="container text-center">
-  <h1>Featured raffles</h1>
-  <div class="row">
-   <% @raffles.each do |r| %>
-    <div class="col-xs-6 col-sm-3">
-      <div class="card grow">
-        <div class="image">
-          <%= cl_image_tag r.photo, class: "img-show", crop: :fill, style: "width: 260px; height: 175px;" %>
-        </div>
-        <div class="card-bar">
-          <div class="card-bar-green" style="width: <%= (r.available_tickets.to_f / r.ticket_quantity * 100).to_i %>%">
+
+<<div class="middle-wrapper">
+  <div class="container text-center">
+    <h1>Featured raffles</h1>
+    <div class="row">
+     <% @raffles.each do |r| %>
+      <div class="col-xs-6 col-sm-3">
+        <div class="card grow">
+          <div class="image">
+            <%= cl_image_tag r.photo, class: "img-show", crop: :fill, style: "width: 260px; height: 175px;" %>
           </div>
-        </div>
-        <div class="card-info">
-          <div class="info raffle-name">
-          <p> <%= r.model %> </p>
+          <div class="card-bar">
+            <div class="card-bar-green" style="width: <%= (r.available_tickets.to_f / r.ticket_quantity * 100).to_i %>%">
+            </div>
           </div>
-          <div class="your-clock" style="color:#2bde73" data-countdown="<%=r.end_date.to_i * 1000 %>">
+          <div class="card-info">
+            <div class="info raffle-name">
+            <p> <%= r.model %> </p>
+            </div>
+            <div class="your-clock" style="color:#2bde73" data-countdown="<%=r.end_date.to_i * 1000 %>">
+            </div>
           </div>
+        <%= link_to "", raffle_path(r), class: "card-link"%>
         </div>
-      <%= link_to "", raffle_path(r), class: "card-link"%>
       </div>
+     <% end %>
     </div>
-   <% end %>
   </div>
 </div>
 
