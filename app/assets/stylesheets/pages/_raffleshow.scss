@@ -1,7 +1,12 @@
 .rafflebox {
   width: 100%;
   display: flex;
-  height: calc(95vh-70px);
+  height: calc(90vh-70px);
+}
+
+.btn-box {
+  background: white;
+  border-radius: 4px;
 }
 
 .leftbox {
@@ -15,11 +20,11 @@
   left: 20%;
 }
 
-.image-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
+// .image-container {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+// }
 
 .image-item {
   margin: 20px;
@@ -36,16 +41,14 @@
 
 .rightbox {
   flex: 0 0 50%;
-  margin-top: 40px;
-  color: white;
-  margin-right: 0px;
+  margin-top: 60px;
+  margin-left: 45px;
   top: 0px;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   span {
-    opacity: 0.3;
-    font-weight: 100;
+    opacity: 1;
+    font-weight: 500;
   }
 }
 
@@ -65,18 +68,17 @@
 
 .rightbox-content {
   font-size: 26px;
+  color: $gray;
 }
 
 .btn-buy {
-  margin-top: 40px;
-  background: $green;
+  margin-top: 5px;
+  background: white;
   width: 150px;
   height: 70px;
-  border-radius: 50pc;
   font: 20px;
   border: 0px solid white;
   font-size: 20px
-  // border: 2px solid white;
 }
 .btn-buy:hover {
    border: 2px solid white;
@@ -84,13 +86,15 @@
 }
 
 .btn-plus-minus {
-  border-radius: 50%;
-  background-color: $green;
+  color: $green;
+  border-radius: 4;
+  background-color: white;
   width: 40px;
   height: 40px;
   margin: 5px;
+  border: 2px solid white;
   &:hover {
-   border: 2px solid white;
+   color: $green;
   }
 }
 
