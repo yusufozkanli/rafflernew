@@ -2,14 +2,14 @@
  <% raffles.each do |r| %>
   <div class="col-xs-12 col-sm-4 col-lg-3">
     <%= link_to raffle_path(r) do %>
-      <div class="card3 grow">
+      <div class="card3">
         <div class="image">
-          <%= cl_image_tag r.photo, class: "img-show", crop: :fill, style: "width: 150px; height: 100px;" %>
-        </div>
-        <div class="top-bar-icons">
-          <% if r.user == current_user  %>
-            <%= link_to "", edit_raffle_path(r) , class: "fa fa-pencil raffle-edit" %>
-          <% end %>
+          <%= cl_image_tag r.photo, id:"dashboard-card-image", class: "img-show", crop: :fill, style: "width: 150px; height: 100px;" %>
+           <div class="top-bar-icons">
+            <% if r.user == current_user  %>
+              <%= link_to "", edit_raffle_path(r) , class: "fa fa-pencil raffle-edit" %>
+            <% end %>
+          </div>
         </div>
         <div class="card-bar-dashboard">
           <div class="card-bar-green-dashboard" style="width: <%= (r.available_tickets.to_f / r.ticket_quantity * 100).to_i %>%">

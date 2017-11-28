@@ -48,6 +48,11 @@
   z-index: -1;
 }
 
+#dashboard-card-image {
+  position: relative;
+  z-index: 1;
+}
+
 .image-text {
   position: absolute;
   z-index: 1;
@@ -104,6 +109,20 @@
 
 .timer p {
   margin-bottom: 0px;
+}
+
+.raffle-edit {
+  width: 20px;
+  height: 20px;
+  color: white;
+  font-size: 14px;
+  z-index: 3;
+  position: absolute;
+  top: -5%;
+  right: 0%;
+  background-color: $green;
+  border-radius: 50%;
+  text-align: center;
 }
 
 .btn {
