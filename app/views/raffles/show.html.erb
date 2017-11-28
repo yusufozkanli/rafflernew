@@ -1,24 +1,28 @@
-<div class="container" style=" background:#f1f1f1; width:100%">
-  <div class="rafflebox">
+<div class="container-showpage" style="background:white">
+  <div class="container" style=" background:white">
+    <div class="rafflebox">
 
-    <div class="leftbox">
-      <div class="image-item">
-        <div class="raffle-image" style="background-image: url(<%= cl_image_path @raffle.photo, crop: :fill, width: 400; %>)">
+      <div class="leftbox">
+        <div class="image-item">
+          <div class="raffle-image" style="background-image: url('<%= cl_image_path @raffle.photo, width: 530, height:400, crop: :pad %>')">
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="rightbox">
-      <div class="rightbox-content text-left">
-        <div class="your-clock" style="color: #2bde73" " data-countdown="<%= @raffle.end_date.to_i * 1000 %>">
+      <div class="rightbox">
+        <div class="rightbox-content text-left">
+          <div class="your-clock" style="color: #2bde73" " data-countdown="<%= @raffle.end_date.to_i * 1000 %>">
+          </div>
+          <h2><span><%= @raffle.title %></span></h2>
+          <%= render 'orders/new' %>
         </div>
-        <h2><span><%= @raffle.title %></span></h2>
-        <%= render 'orders/new' %>
       </div>
     </div>
   </div>
 </div>
 
+<div class="container-white">
+<div class="container">
 <div class="infobox">
   <div class="leftbox-info">
     <div class="raffle-info-content">
@@ -44,4 +48,6 @@
           </div> -->
 
 
+</div>
+</div>
 </div>
