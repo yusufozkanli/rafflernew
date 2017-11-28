@@ -1,25 +1,25 @@
-
-  <div class="container">
-    <div class="ticket-card" style="background-image: url('<%= image_path 'design-raffler.png' %>')";>
-    <div class="image-ticket-card">
-      <%= image_tag 'ticket.png' %>
-    </div>
-      <div class="ticket-number">
-        <p><strong>Your ticket number is :</strong>
-          <br> <%= @order.ticket_number %>
-        </p>
-        <div class="time-card">
-          <p><strong style="line-height: 3;">
-            <div class="your-clock" style="color:#2bde73" data-countdown="<%=@raffle.end_date.to_i * 1000 %>">
-              </div> </strong></p>
-        </div>
+<div class="container">
+  <div class="ticket-card" style="background-image: url('<%= image_path 'design-raffler.png' %>')";>
+  <div class="image-ticket-card">
+    <%= image_tag 'ticket.png' %>
+  </div>
+    <div class="ticket-number">
+      <p><strong>Your ticket number is :</strong>
+        <br> <%= @order.ticket_number %>
+      </p>
+      <div class="time-card">
+        <p><strong style="line-height: 3;">
+          <div class="your-clock" style="color:#2bde73" data-countdown="<%=@raffle.end_date.to_i * 1000 %>">
+            </div> </strong></p>
       </div>
     </div>
-    <%= form_tag commands_path do %>
-    <%= hidden_field_tag 'order_id', @order.id %>
-    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-    <% end %>
-    <div class="message">
-    <p> find me in your dashboard</p>
-    </div>
   </div>
+  <%= form_tag commands_path do %>
+  <%= hidden_field_tag 'order_id', @order.id %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+  <% end %>
+  <div class="message">
+  <p> Find me in your dashboard</p>
+  </div>
+</div>
+
