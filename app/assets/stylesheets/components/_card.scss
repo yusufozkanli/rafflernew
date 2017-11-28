@@ -30,6 +30,25 @@
   border-radius: 50%;
 }
 
+#winner-image-box {
+  display: flex;
+}
+
+#winner-image {
+  position: relative;
+  z-index: -1;
+}
+
+.image-text {
+  position: absolute;
+  z-index: 1;
+  background-color: $green;
+  right: 8px;
+  bottom: 70px;
+  border-radius: 5px;
+  padding: 2px;
+}
+
 .card-link {
   position: absolute;
   top: 0;
