@@ -14,8 +14,25 @@ class UsersController < ApplicationController
       raffles_to_display = @user.raffles
     end
     @raffles = raffles_to_display
+    @raffles_pending = filter_by_active(raffles_to_display)
+    @raffles_past = filter_by_past(raffles_to_display)
   end
 
+  def filter_by_active(raffles)
+    active_raffles = []
+    raffles.each do |raffle|
+      raffle.status == "active" ? active_raffles << raffle : nil
+    end
+    return active_raffles
+  end
+
+  def filter_by_past(raffles)
+    past_raffles = []
+    raffles.each do |raffle|
+      raffle.status != "active" ? past_raffles << raffle : nil
+    end
+    return past_raffles
+  end
 
   def edit
   end
