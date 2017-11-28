@@ -23,27 +23,60 @@
           </li>
         </ul>
 
-
-
-
-
-
-
-
         <div class="underviews">
           <div class="titles">
             <div class="title green">
-              <p>Pending Raffles</p>
+              <a id="pending-raffles-link" class="active-link" href="#">Pending Raffles</a>
             </div>
             <div class="title gray">
-              <p>Past Raffles</p>
+              <a id="past-raffles-link" href="#">Past Raffles</a>
             </div>
           </div>
-          <%= render 'shared/card3', raffles: @raffles %>
+          <div id="raffles-pending" class="active">
+            <%= render 'shared/card3', raffles: @raffles_pending %>
+          </div>
+          <div id="raffles-past" class="hidden">
+            <%= render 'shared/card3', raffles: @raffles_past %>
+          </div>
+          <%#= render 'shared/card3', raffles: @raffles %>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<% content_for(:after_js) do %>
+  <script>
+    const pendingRafflesButton = document.getElementById('pending-raffles-link')
+    const pastRafflesButton = document.getElementById('past-raffles-link')
+
+    const pendingRafflesDiv = document.getElementById('raffles-pending')
+    const pastRafflesDiv = document.getElementById('raffles-past')
+
+    pendingRafflesButton.addEventListener('click', (e) => {
+      e.preventDefault()
+      pendingRafflesDiv.className = 'active'
+      pastRafflesDiv.className = 'hidden'
+
+      // pendingRafflesDiv.className -= ' hidden'
+      // pastRafflesDiv.className -= ' active'
+
+      pendingRafflesButton.className = 'active-link'
+      pastRafflesButton.className = ''
+    })
+
+    pastRafflesButton.addEventListener('click', (e) => {
+      e.preventDefault()
+      pendingRafflesDiv.className = 'hidden'
+      pastRafflesDiv.className = 'active'
+
+      // pendingRafflesDiv.className -= ' active'
+      // pastRafflesDiv.className -= ' hidden'
+
+      pendingRafflesButton.className = ''
+      pastRafflesButton.className = 'active-link'
+    })
+  </script>
+<% end  %>
 
 <%= javascript_pack_tag 'dashboard' %>

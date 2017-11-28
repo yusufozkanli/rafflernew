@@ -75,13 +75,13 @@
 
 .green{
   background-color: $green;
-  text-align: left;
+  text-align: center;
   border-top-left-radius: 5px;
 }
 
 .gray {
   background-color: $gray;
-  text-align: right;
+  text-align: center;
   border-top-right-radius: 5px;
 }
 
@@ -98,6 +98,17 @@
   left: 10px;
 }
 
+.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.active-link {
+  color: red;
+}
 
 
 
