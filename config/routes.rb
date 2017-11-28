@@ -9,5 +9,11 @@ Rails.application.routes.draw do
       get '/winner', to: 'orders#winner'
     end
   end
+
+  resources :commands, only: [:show, :create] do
+    resources :payments, only: [:new, :create]
+  end
+
+
   resources :users, only: [ :show, :update, :edit ]
 end
