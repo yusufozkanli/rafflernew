@@ -10,9 +10,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :commands, only: [:show, :create] do
+  resources :commands, only: [] do
     resources :payments, only: [:new, :create]
   end
+
+  get "/commands/:order_id", to: "commands#show", as: :commands
+  post "/commands/:order_id", to: "commands#create", as: :commands_create
 
 
   resources :users, only: [ :show, :update, :edit ]

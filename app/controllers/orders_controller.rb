@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
     if @order.save
       @raffle.available_tickets -= 1
       @raffle.save
-      redirect_to raffle_order_confirmation_path(@raffle, @order)
+      redirect_to commands_create_path(@order)
     else
       render 'orders/new'
     end
