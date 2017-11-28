@@ -4,7 +4,7 @@
     <div class="col-xs-6 col-sm-3">
       <div class="card grow">
         <div class="image">
-          <%= cl_image_tag r.photo, class: "img-show", crop: :fill, style: "width: 260px; height: 175px;" %>
+          <%= cl_image_tag r.photo, width: 270, height:200, crop: :scale, class: "img-show" %>
         </div>
         <div class="card-bar">
           <div class="card-bar-green" style="width: <%= (r.available_tickets.to_f / r.ticket_quantity * 100).to_i %>%">
