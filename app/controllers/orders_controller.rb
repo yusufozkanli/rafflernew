@@ -23,6 +23,10 @@ class OrdersController < ApplicationController
 
   def confirmation
     set_order
+    set_winning_order
+    if @raffle.status != 'active'
+      redirect_to raffle_order_winner_path(@raffle, @winning_order)
+    end
   end
 
   def winner
@@ -41,6 +45,10 @@ class OrdersController < ApplicationController
 
   def set_order
     @order = Order.find(params[:order_id])
+  end
+
+  def set_winning_order
+    @winning_order = @raffle.orders.where(won: true).first
   end
 
   def set_ticket_number
