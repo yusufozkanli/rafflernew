@@ -9,7 +9,9 @@ class PickWinnerJob < ApplicationJob
     raffle.status = "Completed"
     raffle.save
     raffle.orders.each do |o|
-      raffle_tickets << o.ticket_number
+      o.quantity.times do
+        raffle_tickets << o.ticket_number
+      end
     end
     x = raffle_tickets.length - 1
     return raffle_tickets[rand(0..x)]
