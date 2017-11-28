@@ -52,8 +52,18 @@ class OrdersController < ApplicationController
   end
 
   def set_ticket_number
+    ticket_no = generate_ticket_number
+    does_not_exist = Order.find_by(ticket_number: ticket_no).nil?
+    if does_not_exist
+      return ticket_no
+    end
+    set_ticket_number
+  end
+
+  private
+
+  def generate_ticket_number
     ticket_number = 10.times.map{rand(10)}.join
     return ticket_number
   end
-
 end
