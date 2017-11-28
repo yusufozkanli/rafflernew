@@ -1,3 +1,12 @@
+.container h1{
+  margin-top: 40px;
+  margin-bottom: 5px;
+}
+
+.middle-wrapper{
+  background-color: #F5F5F5;
+}
+
 .card {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -39,12 +48,17 @@
   z-index: -1;
 }
 
+#dashboard-card-image {
+  position: relative;
+  z-index: 1;
+}
+
 .image-text {
   position: absolute;
   z-index: 1;
   background-color: $green;
-  right: 8px;
-  bottom: 70px;
+  right: 4%;
+  top: 4%;
   border-radius: 5px;
   padding: 2px;
 }
@@ -65,6 +79,7 @@
 // }
 
 .card-info {
+  margin-top: 8px;
   display: flex;
   justify-content: space-between;
   height: 20px;
@@ -85,11 +100,29 @@
   text-shadow: none;
   margin-left: 5px;
   margin-right: 5px;
+}
 
+.ticketquantity {
+  font-size: 10px;
+  text-align: right;
 }
 
 .timer p {
   margin-bottom: 0px;
+}
+
+.raffle-edit {
+  width: 20px;
+  height: 20px;
+  color: white;
+  font-size: 14px;
+  z-index: 3;
+  position: absolute;
+  top: -5%;
+  right: 0%;
+  background-color: $green;
+  border-radius: 50%;
+  text-align: center;
 }
 
 .btn {

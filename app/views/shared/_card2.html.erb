@@ -1,20 +1,22 @@
-<div class="container">
+<div class="container text-center">
+  <h1>Ending soon</h1>
   <div class="row">
    <% @raffles_ending.each do |r| %>
-    <div class="col-xs-6 col-sm-3">
-      <div class="card">
+    <div class="col-xs-12 col-sm-6 col-lg-3">
+      <div class="card grow">
         <div class="image">
           <%= cl_image_tag r.photo, class: "img-show", crop: :fill, style: "width: 260px; height: 175px;" %>
-        </div>
-        <div class="card-bar">
-          <div class="card-bar-green" style="width: <%= (r.available_tickets.to_f / r.ticket_quantity * 100).to_i %>%">
-          </div>
         </div>
         <div class="card-info">
           <div class="info raffle-name">
           <p> <%= r.model %> </p>
           </div>
-          <div class="your-clock" style="color: #2bde73" data-countdown="<%= r.end_date.to_i * 1000 %>"></div>
+          <div class="your-clock" style="color: #FF0000" data-countdown="<%= r.end_date.to_i * 1000 %>"></div>
+        </div>
+        <div class="card-bar">
+          <div class="card-bar-red" style="width: <%= (r.available_tickets.to_f / r.ticket_quantity * 100).to_i %>%">
+          </div>
+          <p class="ticketquantity" style="color:#FF0000;"> <%= r.available_tickets %> / <%= r.ticket_quantity %>tickets left </p>
         </div>
         </div>
       <%= link_to "", raffle_path(r), class: "card-link"%>
