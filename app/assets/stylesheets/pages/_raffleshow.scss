@@ -1,7 +1,10 @@
 .rafflebox {
+  background: #f1f1f1;
+  margin-top: 50px;
   width: 100%;
   display: flex;
-  height: calc(90vh-70px);
+  height: calc(93vh - 70px);
+  width: 100%
 }
 
 .btn-box {
@@ -30,11 +33,11 @@
   margin: 20px;
 }
 
-.raffle-info {
-  color: black;
+.raffle-info-content {
+  margin-left: 35px;
   padding: 20px;
   span {
-    opacity: 0.5;
+    opacity: 0.8;
     font-weight: 100;
   }
 }
@@ -42,8 +45,9 @@
 .rightbox {
   flex: 0 0 50%;
   margin-top: 60px;
-  margin-left: 45px;
+  margin-left: 80px;
   top: 0px;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   span {
@@ -89,8 +93,8 @@
   color: $green;
   border-radius: 4;
   background-color: white;
-  width: 40px;
-  height: 40px;
+  width: 55px;
+  height: 45px;
   margin: 5px;
   border: 2px solid white;
   &:hover {
@@ -104,4 +108,28 @@
 .img-show {
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.leftbox-info {
+background: white;
+flex: 0 0 20%;
+}
+
+.infobox {
+  background: white;
+  width: 100%;
+  display: flex;
+}
+
+.rightbox-description {
+  flex: 0 0 70%;
+  margin-top: 60px;
+  margin-left: 45px;
+  top: 0px;
+  display: flex;
+  justify-content: space-between;
+  span {
+    opacity: 1;
+    font-weight: 500;
+  }
 }
