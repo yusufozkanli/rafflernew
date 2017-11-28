@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :payments, only: [:new, :create]
   end
 
-  get "/commands/:order_id", to: "commands#show", as: :commands
+  get "/commands/:id", to: "commands#show", as: :commands
   get "/commands/:order_id", to: "commands#create_command", as: :commands_create
 
 
