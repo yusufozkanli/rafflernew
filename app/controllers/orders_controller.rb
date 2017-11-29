@@ -12,19 +12,23 @@ class OrdersController < ApplicationController
     @order.raffle_id = @raffle.id
     @order.ticket_number = set_ticket_number
     @order.price_pennies = 100 * @order.quantity
-    if @order.save
-      @raffle.available_tickets -= @order.quantity
-      @raffle.save
-      if current_user.user_tickets == 0 || current_user.user_tickets < @order.quantity
-        command = Command.create!(order_sku: @order.sku, amount: @order.price, state: 'pending', order: @order)
-        redirect_to new_command_payment_path(command)
+    if @order.quantity < @raffle.available_tickets
+      if @order.save
+        @raffle.available_tickets -= @order.quantity
+        @raffle.save
+        if current_user.user_tickets == 0 || current_user.user_tickets < @order.quantity
+          command = Command.create!(order_sku: @order.sku, amount: @order.price, state: 'pending', order: @order)
+          redirect_to new_command_payment_path(command)
+        else
+          current_user.user_tickets -= @order.quantity
+          current_user.save
+          redirect_to raffle_order_confirmation_path(@raffle, @order)
+        end
       else
-        current_user.user_tickets -= @order.quantity
-        current_user.save
-        redirect_to raffle_order_confirmation_path(@raffle, @order)
+        render 'orders/new'
       end
     else
-      render 'orders/new'
+      redirect_to raffle_path(@raffle), alert: "You can not buy this many tickets!"
     end
   end
 
