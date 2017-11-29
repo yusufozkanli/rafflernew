@@ -26,18 +26,14 @@
 
         <div class="underviews">
           <div class="titles">
-            <div class="title green">
-              <a id="pending-raffles-link" class="active-link" href="#">Pending Raffles</a>
-            </div>
-            <div class="title gray">
-              <a id="past-raffles-link" href="#">Past Raffles</a>
-            </div>
+            <a id="pending-raffles-link" class="active-link title green" href="#">Pending Raffles</a>
+            <a id="past-raffles-link" class="title gray" href="#">Past Raffles</a>
           </div>
           <div id="raffles-pending" class="active">
-            <%= render 'shared/card3', raffles: @raffles_pending %>
+            <%= render 'shared/list', raffles: @raffles_pending %>
           </div>
           <div id="raffles-past" class="hidden">
-            <%= render 'shared/card3', raffles: @raffles_past %>
+            <%= render 'shared/list', raffles: @raffles_past %>
           </div>
           <%#= render 'shared/card3', raffles: @raffles %>
         </div>
