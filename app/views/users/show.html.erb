@@ -12,22 +12,21 @@
       </div>
 
       <div class="user-raffles">
-        <ul class="nav nav-tabs">
-          <li class="nav-item">
-
+        <ul class="rafflelist list-inline">
+          <li class="<%= tab_participant?(params[:tab]) %> text-center" id="participant">
             <%= link_to "Participant", user_path(@user, tab: "Participant") %>
             <!-- <a class="nav-link active" href="#" id="participant_tab">Participant</a> -->
           </li>
-          <li class="nav-item">
+          <li class="<%= tab_organiser?(params[:tab]) %> text-center" id="organiser">
             <%= link_to "Organiser", user_path(@user, tab: "Organiser") %>
-
           </li>
         </ul>
+
 
         <div class="underviews">
           <div class="titles">
             <a id="pending-raffles-link" class="active-link title green" href="#">Pending Raffles</a>
-            <a id="past-raffles-link" class="title gray" href="#">Past Raffles</a>
+            <a id="past-raffles-link" class="title white" href="#">Past Raffles</a>
           </div>
           <div id="raffles-pending" class="active">
             <%= render 'shared/list', raffles: @raffles_pending %>
@@ -50,6 +49,9 @@
     const pendingRafflesDiv = document.getElementById('raffles-pending')
     const pastRafflesDiv = document.getElementById('raffles-past')
 
+    const ParticipantButton = document.getElementById('participant')
+    const OrganiserButton = document.getElementById('organiser')
+
     pendingRafflesButton.addEventListener('click', (e) => {
       e.preventDefault()
       pendingRafflesDiv.className = 'active'
@@ -59,7 +61,7 @@
       // pastRafflesDiv.className -= ' active'
 
       pendingRafflesButton.className = 'active-link'
-      pastRafflesButton.className = ''
+      pastRafflesButton.className = 'hidden-link'
     })
 
     pastRafflesButton.addEventListener('click', (e) => {
@@ -70,9 +72,20 @@
       // pendingRafflesDiv.className -= ' active'
       // pastRafflesDiv.className -= ' hidden'
 
-      pendingRafflesButton.className = ''
+      pendingRafflesButton.className = 'hidden-link'
       pastRafflesButton.className = 'active-link'
     })
+
+    ParticipantButton.addEventListener('click', (e) => {
+      ParticipantButton.className = 'active2'
+      OrganiserButton.className = 'hidden2'
+    })
+
+    OrganiserButton.addEventListener('click', (e) => {
+      ParticipantButton.className = 'hidden2'
+      OrganiserButton.className = 'active2'
+    })
+
   </script>
 <% end  %>
 

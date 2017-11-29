@@ -37,7 +37,7 @@
             <% end %>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li>
-                <%= link_to user_path(current_user) do %>
+                <%= link_to user_path(current_user, :tab => "Participant") do %>
                  <i class="fa fa-user navbar-dropdown-icon"></i> <%= t(".profile", default: "Dashboard") %>
                 <% end %>
               </li>
