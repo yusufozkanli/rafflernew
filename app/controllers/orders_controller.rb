@@ -15,8 +15,14 @@ class OrdersController < ApplicationController
     if @order.save
       @raffle.available_tickets -= @order.quantity
       @raffle.save
-      command = Command.create!(order_sku: @order.sku, amount: @order.price, state: 'pending', order: @order)
-      redirect_to new_command_payment_path(command)
+      if current_user.user_tickets == 0 || current_user.user_tickets < @order.quantity
+        command = Command.create!(order_sku: @order.sku, amount: @order.price, state: 'pending', order: @order)
+        redirect_to new_command_payment_path(command)
+      else
+        current_user.user_tickets -= @order.quantity
+        current_user.save
+        redirect_to raffle_order_confirmation_path(@raffle, @order)
+      end
     else
       render 'orders/new'
     end
