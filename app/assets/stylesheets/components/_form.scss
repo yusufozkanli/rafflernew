@@ -1,27 +1,27 @@
-.modal-content {
+.green-modal .modal-content {
   background-color: $gray;
   color: $green;
 }
 
-.modal-body h2 {
+.green-modal .modal-body h2 {
   margin-bottom: 30px;
 }
 
-.modal-body a {
+.green-modal .modal-body a {
   color: $green;
 }
 
-.form-control {
+.green-modal .form-control {
   background-color: $gray;
   border: 1px solid $green;
   color: $green;
 }
 
-.form-control:hover {
+.green-modal .form-control:hover {
   text-decoration: none;
 }
 
-.form-group {
+.green-modal .form-group {
   margin-bottom: 35px;
   margin-left: 25px;
   margin-right: 25px;
@@ -42,6 +42,12 @@
   text-decoration: none;
   color: white;
   background-color: $green
+}
+
+.form-group-container {
+  .modal-content {
+  background-color: red;
+  }
 }
 
 

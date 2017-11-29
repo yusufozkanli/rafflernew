@@ -97,6 +97,10 @@ form.new_order {
   height: 270px; /* Update with exact height to center vertically */
 }
 
+button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus {
+  outline: transparent !important;
+}
+
 .btn-buy {
   background: #f1f1f1;
   width: 100%;
@@ -104,10 +108,6 @@ form.new_order {
   font: 20px;
   border: 0px solid white;
   font-size: 20px
-}
-.btn-buy:hover {
-   border: 2px solid white;
-   transition: border 0.2s ease;
 }
 
 .btn-plus-minus {
