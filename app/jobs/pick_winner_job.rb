@@ -24,6 +24,10 @@ class PickWinnerJob < ApplicationJob
       # The person who has won will receive an email.
     end
 
+    def send_raffle_email(user)
+      UserMailer.raffle_result_email(user).deliver_later
+    end
+
     def perform(raffle)
       if raffle.available_tickets == 0
         puts raffle
@@ -31,6 +35,9 @@ class PickWinnerJob < ApplicationJob
         ticket_no = draw_ticketnumber(raffle)
         puts "Updating winning order"
         update_order(ticket_no)
+        raffle.orders.each do |o|
+          send_raffle_email(o.user)
+        end
       else
         puts "Incomplete Raffle..."
         raffle.status = "Incomplete Raffle"

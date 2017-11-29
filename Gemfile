@@ -12,6 +12,7 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'money-rails'
 gem 'stripe'
+gem "letter_opener", group: :development
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'

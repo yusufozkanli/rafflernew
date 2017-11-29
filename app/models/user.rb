@@ -6,4 +6,12 @@ class User < ApplicationRecord
   has_many :raffles
   has_many :orders
   mount_uploader :photo, PhotoUploader
+  after_create :send_welcome_email
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
+
 end
