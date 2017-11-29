@@ -1,0 +1,47 @@
+.modal-content {
+  background-color: $gray;
+  color: $green;
+}
+
+.modal-body h2 {
+  margin-bottom: 30px;
+}
+
+.modal-body a {
+  color: $green;
+}
+
+.form-control {
+  background-color: $gray;
+  border: 1px solid $green;
+  color: $green;
+}
+
+.form-control:hover {
+  text-decoration: none;
+}
+
+.form-group {
+  margin-bottom: 35px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.btn-default {
+  color: $green;
+  background-color: transparent;
+  font-size: 14px;
+  padding: 5px 12px;
+  border: 1.3px solid $green;
+  border-radius: 2px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.btn-default:hover {
+  text-decoration: none;
+  color: white;
+  background-color: $green
+}
+
+
