@@ -23,8 +23,7 @@
 
 .card-bar-show {
   height: 10px;
-  width: 400px;
-  background-color: white;
+  width: 350px;
   margin: 15px 0px;
   border-radius: 3px;
   border: 0.5px solid #e8e8e8;
@@ -32,8 +31,8 @@
 
 .card-bar-green-show {
   border-radius: 3px;
-  height: 8px;
-  width: 70%;
+  height: 10px;
+  background-color: $green;
 }
 
 .card-bar-dashboard {
