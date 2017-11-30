@@ -12,6 +12,8 @@ module Rafflernew
       generate.assets false
       generate.helper false
     end
+    config.active_job.queue_adapter = :sidekiq
+
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
