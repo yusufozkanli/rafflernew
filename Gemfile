@@ -12,6 +12,7 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'money-rails', '= 1.8'
 gem 'stripe', '~> 3.8'
+gem 'sidekiq'
 gem "letter_opener", group: :development
 
 gem 'autoprefixer-rails'

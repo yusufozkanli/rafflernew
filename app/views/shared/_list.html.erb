@@ -20,7 +20,7 @@
       <% else %>
         <ul class="list-inline product-controls hidden-sm hidden-xs">
           <li> <%= Order.find_by(raffle: r, user: @user).quantity %> <i class="fa fa-ticket" aria-hidden="true"> </i> </li>
-          <li>  # <%= Order.find_by(raffle: r, user: @user).ticket_number %> </li>
+          <li> <%= Order.find_by(raffle: r, user: @user).ticket_number %> </li>
         </ul>
       <% end %>
     </div>
