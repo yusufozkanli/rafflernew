@@ -1,0 +1,23 @@
+.payment-content {
+  padding: 20px;
+}
+
+.pay-button {
+  color: white;
+  background-color: $green;
+  font-size: 14px;
+  padding: 5px 12px;
+  border-radius: 2px;
+  font-weight: bold;
+  margin-left: 15px;
+  width: 30px;
+  height: 15px;
+}
+
+.pay-button:hover {
+  text-decoration: none;
+  background-color: transparent;
+  color: $green;
+  border: 1.3px solid $green;
+  font-weight: bold;
+}

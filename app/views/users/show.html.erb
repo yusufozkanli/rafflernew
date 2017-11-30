@@ -3,41 +3,41 @@
 
       <div class="user-info">
         <%= link_to "", edit_user_path(@user) , class: "fa fa-pencil edit-user" %>
-        <%= cl_image_tag @user.photo, class: "avatar-usershow", crop: :fill, style: "width: 150px; height: 150px;" %>
+        <% if @user.photo? %>
+          <%= cl_image_tag @user.photo, class: "avatar-usershow", crop: :fill, style: "width: 150px; height: 150px;" %>
+        <% else %>
+          <img src= "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" class= "avatar-usershow" style= "width:150px; height: 150px"> </img>
+        <% end %>
         <div class="info-text text-center">
           <h3> <%= @user.name %> </h3>
           <p> <%= @user.location %> </p>
           <p> Available Tickets : <%= @user.user_tickets %> </p>
+          <p> Raffles posted: <%= @user.raffles.count %> </p>
         </div>
       </div>
 
       <div class="user-raffles">
-        <ul class="nav nav-tabs">
-          <li class="nav-item">
-
+        <ul class="rafflelist list-inline">
+          <li class="<%= tab_participant?(params[:tab]) %> text-center" id="participant">
             <%= link_to "Participant", user_path(@user, tab: "Participant") %>
             <!-- <a class="nav-link active" href="#" id="participant_tab">Participant</a> -->
           </li>
-          <li class="nav-item">
+          <li class="<%= tab_organiser?(params[:tab]) %> text-center" id="organiser">
             <%= link_to "Organiser", user_path(@user, tab: "Organiser") %>
-
           </li>
         </ul>
 
+
         <div class="underviews">
           <div class="titles">
-            <div class="title green">
-              <a id="pending-raffles-link" class="active-link" href="#">Pending Raffles</a>
-            </div>
-            <div class="title gray">
-              <a id="past-raffles-link" href="#">Past Raffles</a>
-            </div>
+            <a id="pending-raffles-link" class="active-link title green" href="#">Pending Raffles</a>
+            <a id="past-raffles-link" class="title white" href="#">Past Raffles</a>
           </div>
           <div id="raffles-pending" class="active">
-            <%= render 'shared/card3', raffles: @raffles_pending %>
+            <%= render 'shared/list', raffles: @raffles_pending %>
           </div>
           <div id="raffles-past" class="hidden">
-            <%= render 'shared/card3', raffles: @raffles_past %>
+            <%= render 'shared/list', raffles: @raffles_past %>
           </div>
           <%#= render 'shared/card3', raffles: @raffles %>
         </div>
@@ -54,6 +54,9 @@
     const pendingRafflesDiv = document.getElementById('raffles-pending')
     const pastRafflesDiv = document.getElementById('raffles-past')
 
+    // const ParticipantButton = document.getElementById('participant')
+    // const OrganiserButton = document.getElementById('organiser')
+
     pendingRafflesButton.addEventListener('click', (e) => {
       e.preventDefault()
       pendingRafflesDiv.className = 'active'
@@ -63,7 +66,7 @@
       // pastRafflesDiv.className -= ' active'
 
       pendingRafflesButton.className = 'active-link'
-      pastRafflesButton.className = ''
+      pastRafflesButton.className = 'hidden-link'
     })
 
     pastRafflesButton.addEventListener('click', (e) => {
@@ -74,9 +77,20 @@
       // pendingRafflesDiv.className -= ' active'
       // pastRafflesDiv.className -= ' hidden'
 
-      pendingRafflesButton.className = ''
+      pendingRafflesButton.className = 'hidden-link'
       pastRafflesButton.className = 'active-link'
     })
+
+    // ParticipantButton.addEventListener('click', (e) => {
+    //   ParticipantButton.className = 'active2'
+    //   OrganiserButton.className = 'hidden2'
+    // })
+
+    // OrganiserButton.addEventListener('click', (e) => {
+    //   ParticipantButton.className = 'hidden2'
+    //   OrganiserButton.className = 'active2'
+    // })
+
   </script>
 <% end  %>
 

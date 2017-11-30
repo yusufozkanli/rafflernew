@@ -2,7 +2,9 @@
   <div class="form-flex">
     <% if @raffle.user == current_user %>
       <p>You are the owner of this Raffle. You can edit it on your dashboard</p>
-    <% elsif %>
+    <% elsif ["Completed", "Incomplete Raffle"].include?(@raffle.status) %>
+      <p> Raffle is over </p>
+    <% else %>
     <div class="btn-box">
       <%= simple_form_for [@raffle, @order] do |f| %>
        <input type="button" onclick="decrementValue()" value="-" class="btn-plus-minus" />

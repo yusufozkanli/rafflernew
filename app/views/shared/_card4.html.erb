@@ -1,6 +1,5 @@
 <div class="middle-wrapper">
   <div class="container text-center">
-    <h1>Featured raffles</h1>
     <div class="row">
      <% @raffles.each do |r| %>
       <div class="col-xs-12 col-sm-6 col-lg-3">
@@ -10,7 +9,7 @@
           </div>
             <div class="card-info">
               <div class="info raffle-name">
-              <p> <%= r.title %> </p>
+              <p> <%= r.model %> </p>
               </div>
               <div class="your-clock" style="color:#2bde73" data-countdown="<%=r.end_date.to_i * 1000 %>">
               </div>
@@ -28,4 +27,3 @@
     </div>
   </div>
 </div>
-

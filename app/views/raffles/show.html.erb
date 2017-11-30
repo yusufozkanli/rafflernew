@@ -34,7 +34,7 @@
     <div class="raffle-info-content">
       <h2> Information </h2>
             <p><strong> Category:</strong> <span><%= @raffle.category_name %> <span></p>
-            <p><strong> Category: </strong><span><%= @raffle.model %><span></p>
+            <p><strong> Model: </strong><span><%= @raffle.model %><span></p>
             <p><strong> Brand:</strong> <span><%= @raffle.brand %> <span></p>
             <p><strong> Color: </strong><span> <%= @raffle.color %> <span></p>
              <p><strong> Sold by:</strong> <span><%= link_to "#{@raffle.user.name}", user_path(@user) %></p>

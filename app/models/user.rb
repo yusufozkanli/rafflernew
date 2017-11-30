@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :orders
   mount_uploader :photo, PhotoUploader
   after_create :send_welcome_email
+  validates :name, presence: true
 
     def self.find_for_facebook_oauth(auth)
       user_params = auth.slice(:provider, :uid)

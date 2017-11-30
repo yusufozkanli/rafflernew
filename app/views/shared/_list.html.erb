@@ -1,0 +1,27 @@
+
+<% raffles.each do |r| %>
+  <div class="order-list">
+      <%= cl_image_tag r.photo, class:"order-image", crop: :fill, style: "width: 50px; height: 50px;" %>
+      <div class='order-body'>
+        <h3> <%= r.title %> </h3>
+      <% if r.status == "active"  %>
+        <div class="your-clock" style= "color:#2bde73" data-countdown="<%= r.end_date.to_i * 1000 %>"></div>
+      <% elsif r.status == "Incomplete Raffle" %>
+        <p style="color:red"> Incomplete Raffle </p>
+      <% elsif r.status == "Completed" %>
+        <p style="color:#2BDE73"> Completed </p>
+      <% end %>
+      </div>
+      <% if r.user == current_user  %>
+        <ul class="list-inline product-controls hidden-sm hidden-xs">
+          <li> <%= r.available_tickets %> <i class="fa fa-ticket" aria-hidden="true"> </i> </li>
+          <li> <%= link_to "", edit_raffle_path(r) , class: "fa fa-pencil" %> </li>
+        </ul>
+      <% else %>
+        <ul class="list-inline product-controls hidden-sm hidden-xs">
+          <li> <%= Order.find_by(raffle: r, user: @user).quantity %> <i class="fa fa-ticket" aria-hidden="true"> </i> </li>
+          <li>  # <%= Order.find_by(raffle: r, user: @user).ticket_number %> </li>
+        </ul>
+      <% end %>
+    </div>
+<% end %>
