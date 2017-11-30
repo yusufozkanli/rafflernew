@@ -50,8 +50,8 @@
     const pendingRafflesDiv = document.getElementById('raffles-pending')
     const pastRafflesDiv = document.getElementById('raffles-past')
 
-    const ParticipantButton = document.getElementById('participant')
-    const OrganiserButton = document.getElementById('organiser')
+    // const ParticipantButton = document.getElementById('participant')
+    // const OrganiserButton = document.getElementById('organiser')
 
     pendingRafflesButton.addEventListener('click', (e) => {
       e.preventDefault()
@@ -77,15 +77,15 @@
       pastRafflesButton.className = 'active-link'
     })
 
-    ParticipantButton.addEventListener('click', (e) => {
-      ParticipantButton.className = 'active2'
-      OrganiserButton.className = 'hidden2'
-    })
+    // ParticipantButton.addEventListener('click', (e) => {
+    //   ParticipantButton.className = 'active2'
+    //   OrganiserButton.className = 'hidden2'
+    // })
 
-    OrganiserButton.addEventListener('click', (e) => {
-      ParticipantButton.className = 'hidden2'
-      OrganiserButton.className = 'active2'
-    })
+    // OrganiserButton.addEventListener('click', (e) => {
+    //   ParticipantButton.className = 'hidden2'
+    //   OrganiserButton.className = 'active2'
+    // })
 
   </script>
 <% end  %>
