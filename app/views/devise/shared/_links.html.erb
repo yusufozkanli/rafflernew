@@ -19,7 +19,24 @@
 <% end -%>
 
 <%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+  <%- User.omniauth_providers.each do |provider| %>
+  <div class= "fa fa-facebook"></div>
+    <%= link_to "login with Facebook", omniauth_authorize_path(resource_name, provider) %>
+
+    <br />
+
+
   <% end -%>
 <% end -%>
+
+<!-- <div id="fb-root"></div>
+          <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_EN/sdk.js#xfbml=1&version=v2.10&appId=516262495439304";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+          </script>
+          <div class="fb-login-button" data-max-rows="1" data-size="small" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true">
+          </div> -->
