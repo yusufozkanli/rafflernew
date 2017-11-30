@@ -35,9 +35,9 @@ class PickWinnerJob < ApplicationJob
         ticket_no = draw_ticketnumber(raffle)
         puts "Updating winning order"
         update_order(ticket_no)
-        raffle.orders.each do |o|
-          send_raffle_email(o.user)
-        end
+        # raffle.orders.each do |o|
+        #   send_raffle_email(o.user)
+        # end
       else
         puts "Incomplete Raffle..."
         raffle.status = "Incomplete Raffle"
