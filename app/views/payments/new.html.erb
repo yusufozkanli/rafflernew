@@ -1,17 +1,19 @@
-<h1>Purchase of ticket <%= @command.order_sku %></h1>
-<%= form_tag command_payments_path(@command) do %>
-  <article>
-    <label class="amount">
-      <span>Amount: <%= humanized_money_with_symbol(@command.amount) %></span>
-    </label>
-  </article>
+<div class="payment-content">
+  <h1>Purchase of ticket </h1>
+  <%= form_tag command_payments_path(@command) do %>
+    <article>
+      <label class="amount">
+        <span>Amount: <%= humanized_money_with_symbol(@command.amount) %></span>
+      </label>
+    </article>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-name="My Ticket"
-    data-email="<%= current_user.email %>"
-    data-description="Ticket <%= @command.order_sku %>"
-    data-amount="<%= @command.amount_pennies %>"
-    data-currency="<%= @command.amount.currency %>"></script>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-name="My Ticket"
+      data-email="<%= current_user.email %>"
+      data-description="Ticket <%= @command.order_sku %>"
+      data-amount="<%= @command.amount_pennies %>"
+      data-currency="<%= @command.amount.currency %>"></script>
 
-<% end %>
+  <% end %>
+</div>
