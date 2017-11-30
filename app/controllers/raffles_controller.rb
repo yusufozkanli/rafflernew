@@ -30,7 +30,6 @@ class RafflesController < ApplicationController
   end
 
   def create
-    raise
     @raffle = Raffle.new(raffle_params)
     @raffle.user_id = current_user.id
     @raffle.available_tickets = @raffle.ticket_quantity
