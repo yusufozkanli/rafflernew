@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
     @order.raffle_id = @raffle.id
     @order.ticket_number = set_ticket_number
     @order.price_pennies = 100 * @order.quantity
-    if @order.quantity =< @raffle.available_tickets
+    if @order.quantity <= @raffle.available_tickets
       if @order.save
         @raffle.available_tickets -= @order.quantity
         @raffle.save
