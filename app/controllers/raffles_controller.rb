@@ -21,9 +21,9 @@ class RafflesController < ApplicationController
 
   def browse
     if params[:search]
-      @raffles = Raffle.all.where("model iLIKE ?", "%#{params[:search]}%")
+      @raffles = Raffle.all.where("model iLIKE ?", "%#{params[:search]}%").where("status = 'active'")
     elsif params[:category]
-      @raffles = Raffle.all.where(category_name: params[:category])
+      @raffles = Raffle.all.where(category_name: params[:category]).where("status = 'active'")
     elsif params[:search] && params[:category]
     else
       @raffles = Raffle.where("status = 'active'")
