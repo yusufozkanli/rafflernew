@@ -50,7 +50,6 @@
   padding: 5px 12px;
   border-radius: 2px;
   font-weight: bold;
-  margin-left: 15px;
 }
 
 .navigation-conf-button:hover {
@@ -62,7 +61,9 @@
 }
 
 .button-conf {
-  margin-bottom: 50px;
-  margin-left: 120px;
+  margin-top: 30px;
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
 }
 
