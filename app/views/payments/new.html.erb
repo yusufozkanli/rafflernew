@@ -1,10 +1,25 @@
-<div class="payment-content">
-  <%= form_tag command_payments_path(@command) do %>
-    <article>
-      <label class="amount">
-        <span>Amount: <%= humanized_money_with_symbol(@command.amount) %></span>
-      </label>
-    </article>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <% if @command.amount.to_i<2 %>
+      <h1> You are purchasing 1 ticket </h1>
+      <% else %>
+      <h1> you are purchasing <%= @command.amount.to_i %> tickets</h1>
+
+  <% end %>
+
+        <div class="payment-content">
+          <%= form_tag command_payments_path(@command) do %>
+            <article>
+              <label class="amount">
+                <span>Amount: <%= humanized_money_with_symbol(@command.amount) %></span>
+              </label>
+            </article>
+
+
+
+
 
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -13,6 +28,9 @@
       data-description="Ticket <%= @command.order_sku %>"
       data-amount="<%= @command.amount_pennies %>"
       data-currency="<%= @command.amount.currency %>"></script>
-
-  <% end %>
+   <% end %>
 </div>
+</div>
+</div>
+
+

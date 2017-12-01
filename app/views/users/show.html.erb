@@ -6,7 +6,7 @@
         <% if @user.photo? %>
           <%= cl_image_tag @user.photo, class: "avatar-usershow", crop: :fill, style: "width: 150px; height: 150px;" %>
         <% else %>
-          <img src= "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" class= "avatar-usershow" style= "width:150px; height: 150px"> </img>
+          <img src=  <%= current_user.facebook_picture_url || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" %> Profile_avatar_placeholder_large.png" class= "avatar-usershow" style= "width:150px; height: 150px"> </img>
         <% end %>
         <div class="info-text text-center">
           <h3> <%= @user.name %> </h3>

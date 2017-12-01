@@ -2,7 +2,7 @@
   <div class="userflex-winners">
 
     <div class="user-info-winners text-center">
-      <%= cl_image_tag @order.user.photo, class: "user-avatar-winners", crop: :fill, style: "width: 150px; height: 150px;" %>
+      <%= cl_image_tag @order.user.photo || @order.user.facebppk_picture_url, class: "user-avatar-winners", crop: :fill, style: "width: 150px; height: 150px;" %>
       <div class="info-text4 text-center">
         <h3><strong><%= @order.user.name %></strong></h3>
         <p><%= @order.user.location %></p>
@@ -32,7 +32,7 @@
           <span class="prize"><strong>WINNERS COMMENTS</strong></span>
         </div>
           <div class="winners-comments">
-            <p>I can't believe i've won my dream car for only a £1!
+            <p>I can't believe i've won my <%= @raffle.title %> for only a £1!
             <br>I would advise everyone to go on Raffler as dreams do come true!</br></p>
           </div>
       </div>
