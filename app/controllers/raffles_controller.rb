@@ -3,7 +3,7 @@ class RafflesController < ApplicationController
 
   def index
     @raffles = Raffle.where("status = 'active'").last(4)
-    @raffles_ending = Raffle.where("status = 'active'", "end_date >= '#{DateTime.now}'", "available_tickets > 0").order(:end_date).first(4)
+    @raffles_ending = Raffle.where("status = 'active'" && "end_date >= '#{DateTime.now}'").order(:end_date).first(4)
     won_orders = Order.where(won: true).last(4)
     @orders = won_orders.last(4)
   end
@@ -47,6 +47,7 @@ class RafflesController < ApplicationController
   def update
     @raffle = Raffle.find(params[:id])
     @raffle.update(raffle_params)
+    @raffle.status = "active"
     if @raffle.save
       redirect_to raffle_path(@raffle)
     else
