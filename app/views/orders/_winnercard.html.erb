@@ -13,7 +13,7 @@
               <p> <strong> <%= o.user.first_name || o.user.name %> </strong> </p>
               <p> <%= o.raffle.title %> </p>
               </div>
-              <%= cl_image_tag o.user.facebook_picture_url || o.user.photo, class: "img-avatar", crop: :fill, style: "width: 30px; height: 30px;" %>
+              <%= cl_image_tag o.user.photo || o.user.facebook_picture_url, class: "img-avatar", crop: :fill, style: "width: 30px; height: 30px;" %>
             </div>
           </div>
           <%= link_to "", raffle_order_winner_path(o.raffle, o), class: "card-link"%>
