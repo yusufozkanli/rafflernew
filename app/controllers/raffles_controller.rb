@@ -47,6 +47,7 @@ class RafflesController < ApplicationController
   def update
     @raffle = Raffle.find(params[:id])
     @raffle.update(raffle_params)
+    @raffle.status = "active"
     if @raffle.save
       redirect_to raffle_path(@raffle)
     else
