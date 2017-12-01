@@ -1,6 +1,6 @@
 class Raffle < ApplicationRecord
   belongs_to :user
-  has_many :orders
+  has_many :orders, dependent: :destroy
   validates :title, :description, :end_date, :ticket_quantity, presence: true
   after_create :set_winner_draw_job
   after_update :set_winner_draw_job
