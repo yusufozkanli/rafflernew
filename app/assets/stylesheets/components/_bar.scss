@@ -1,5 +1,5 @@
 .card-bar {
-  height: 9px;
+  height: 10px;
   width: 260px;
   background-color: white;
   margin: 10px 0px;
@@ -31,6 +31,7 @@
 
 .card-bar-green-show {
   border-radius: 3px;
+  margin-top: 0.5px;
   height: 8px;
   background-color: $green;
 }
