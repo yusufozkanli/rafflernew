@@ -12,6 +12,7 @@ class RafflesController < ApplicationController
     @raffle = Raffle.find(params[:id])
     @order = Order.new
     @user = @raffle.user
+    @order_winner = Order.where('raffle_id = ? and won = ?', @raffle.id, true)[0]
   end
 
   def new

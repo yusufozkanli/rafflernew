@@ -35,6 +35,7 @@ class PickWinnerJob < ApplicationJob
         ticket_no = draw_ticketnumber(raffle)
         puts "Updating winning order"
         update_order(ticket_no)
+        redirect_to :back
         # raffle.orders.each do |o|
         #   send_raffle_email(o.user)
         # end
