@@ -1,6 +1,6 @@
 <div class="container" id="winnercontainer">
   <div class="userflex-winners">
-    <div class="row">
+    <div class="row" id="row-winner">
 
     <div class="user-info-winners text-center col-xs-12 col-md-6 col-lg-4">
       <%= cl_image_tag @order.user.facebook_picture_url || @order.user.photo, class: "user-avatar-winners", crop: :fill, style: "width: 150px; height: 150px;" %>
