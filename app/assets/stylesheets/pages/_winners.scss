@@ -2,7 +2,7 @@
   margin-bottom: 20px;
 }
 
-.row {
+#row-winner {
   width: 100%;
 }
 
@@ -93,7 +93,7 @@
 }
 
 @media screen and (min-width: 1000px) {
-    .row {
+    #row-winner {
         display: flex;
         justify-content: space-between;
     }
