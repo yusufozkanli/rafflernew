@@ -1,9 +1,7 @@
-.rafflebox {
+#rafflebox {
   background: white;
-  width: 100%;
   display: flex;
   height: calc(93vh - 80px);
-  width: 100%;
   justify-content: space-around;
 }
 
@@ -25,7 +23,6 @@ padding: 12px
 }
 
 .leftbox {
-  width: 50%;
   position: relative;
   display: flex;
   justify-content: center;
@@ -63,7 +60,6 @@ form.new_order {
 }
 
 .rightbox {
-  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;

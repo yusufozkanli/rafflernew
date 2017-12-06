@@ -1,7 +1,8 @@
 <div class="container" id="winnercontainer">
   <div class="userflex-winners">
+    <div class="row">
 
-    <div class="user-info-winners text-center">
+    <div class="user-info-winners text-center col-xs-12 col-md-6 col-lg-4">
       <%= cl_image_tag @order.user.facebook_picture_url || @order.user.photo, class: "user-avatar-winners", crop: :fill, style: "width: 150px; height: 150px;" %>
       <div class="info-text4 text-center">
         <h3><strong><%= @order.user.first_name || @order.user.name %></strong></h3>
@@ -16,7 +17,7 @@
       </div>
     </div>
 
-    <div class="user-info-winners2 text-center">
+    <div class="user-info-winners2 text-center col-xs-12 col-md-6 col-lg-8">
       <div class="info-text2 text-center">
         <span class="section-line"></span>
         <span class="prize"><strong>PRIZE</strong></span>
