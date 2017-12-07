@@ -125,3 +125,17 @@
 
 .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.08); }
+
+@media screen and (max-width: 600px) and (min-width: 300px) {
+  .row {
+    display: inline-grid;
+  };
+
+  .navbar-wagon {
+    visibility: hidden;
+    height: 0px;
+  };
+}
+
+
+
