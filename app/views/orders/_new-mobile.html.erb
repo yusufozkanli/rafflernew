@@ -1,0 +1,51 @@
+<div class="form-flex-mobile">
+    <% if @raffle.user == current_user %>
+      <p>You are the owner of this Raffle. You can edit it on your dashboard</p>
+    <% elsif ["Completed"].include?(@raffle.status) %>
+      <p> <%= link_to "Show winner", raffle_order_winner_path(@raffle, @order_winner) %> </p>
+    <% elsif ["Incomplete Raffle"].include?(@raffle.status) %>
+      <p>Incomplete Raffle</p>
+    <% else %>
+    <div class="btn-box">
+      <%= simple_form_for [@raffle, @order] do |f| %>
+       <input type="button" onclick="decrementValue()" value="-" class="btn-plus-minus" />
+       <input type="button" id="number" value="1 ticket" class="btn-buy" name="quantity">
+       <input type="button" onclick="incrementValue()" value="+" class="btn-plus-minus" />
+    </div>
+       <%= f.hidden_field :quantity, id: "quantity-value", value: 1 %>
+        <%= f.submit 'Buy now', class: "btn-checkout" %>
+      <% end %>
+    <% end %>
+</div>
+
+
+
+
+<script>
+  var value = parseInt(document.getElementById('number').value, 10);
+  console.log(value)
+  function incrementValue()
+  {
+    const hiddenQuantityField = document.getElementById("quantity-value")
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    hiddenQuantityField.value = value
+    text = value > 1 ? " tickets" : " ticket"
+    document.getElementById('number').value = value + text;
+}
+
+  function decrementValue()
+  {
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if (value > 1) {
+      const hiddenQuantityField = document.getElementById("quantity-value")
+      value--;
+      hiddenQuantityField.value = value
+      text = value > 1 ? " tickets" : " ticket"
+      document.getElementById('number').value = value + text;
+    }
+}
+
+</script>
