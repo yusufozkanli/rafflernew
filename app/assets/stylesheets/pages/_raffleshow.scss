@@ -61,6 +61,7 @@ form.new_order {
 
 .rightbox {
   display: flex;
+  visibility: visible;
   justify-content: center;
   align-items: center;
   span {
@@ -153,8 +154,7 @@ flex: 0 0 20%;
   display: flex;
 }
 
-.rightbox-description {
-  flex: 0 0 70%;
+.rightbox {
   margin-top: 60px;
   margin-left: 45px;
   top: 0px;
@@ -176,3 +176,62 @@ flex: 0 0 20%;
   display: block;
   background: #f1f1f1;
 }
+
+
+.form-flex-mobile {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 600px) and (min-width: 300px) {
+    .form-flex-mobile {
+      visibility: visible;
+      position: -webkit-sticky;
+      position: sticky;
+      bottom: 0;
+      align-self: flex-start;
+      background-color: $gray;
+      padding-top: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 10px;
+    };
+
+    .rightbox {
+    visibility: hidden;
+    height: 0px;
+    margin-top: 0px;
+    background-color: white;
+  };
+
+  #rafflebox {
+    display: block;
+    height: auto;
+  }
+
+  .container {
+    height: auto;
+    padding-right: 0px;
+    padding-left: 0px;
+  };
+
+  .container-all-pages {
+    min-height: auto !important;
+  };
+
+  .container-white {
+    height: auto;
+  };
+
+  .infobox {
+    display: inline-block;
+    background-color: white;
+  };
+
+  .leftbox-info {
+    background-color: white;
+  }
+}
+
+
+
+
