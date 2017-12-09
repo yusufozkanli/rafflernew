@@ -68,6 +68,18 @@
   background-color: $green
 }
 
+.navbar-create-button:focus {
+  text-decoration: none;
+  color: white;
+  background-color: $green
+}
+
+.navbar-create-button:active {
+  text-decoration: none;
+  color: white;
+  background-color: $green
+}
+
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
@@ -112,6 +124,16 @@
 }
 
 .navbar-raffler-title:hover {
+  text-decoration: none;
+  color: $green;
+}
+
+.navbar-raffler-title:focus {
+  text-decoration: none;
+  color: $green;
+}
+
+.navbar-raffler-title:active {
   text-decoration: none;
   color: $green;
 }
