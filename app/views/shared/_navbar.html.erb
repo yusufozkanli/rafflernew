@@ -5,7 +5,8 @@
       <%= image_tag "LogoRaffler2.png" %>
     <% end %>
     <%= link_to root_path, class: "navbar-raffler-title" do %>
-      Raffler
+      <span class="font-playfair" style="letter-spacing: 1px;
+">Raffler</span>
     <% end %>
 
 
@@ -21,53 +22,53 @@
 
 
   <!-- Right Navigation -->
-    <div class="navbar-wagon-right collapse navbar-collapse">
-      <!-- Avatar with dropdown menu -->
-          <div class="navbar-wagon-item navbar-ticket-item">
-            <% if user_signed_in? %>
-            <%= link_to "Create a Raffle", "/raffles/new", class: "navbar-wagon-item navbar-create-button" %>
-          </div>
-          <div class="dropdown">
-            <% if current_user.photo? %>
-              <div class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" style="background-image: url('<%= cl_image_path current_user.photo %>')"></div>
-            <% else %>
-              <div class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" style="background-image: url('<%= current_user.facebook_picture_url || 'https://www.lookout.com/uploads/images/other/legal/privacy-policy/legal-icons-user.svg' %>')">
-          </div>
+  <div class="navbar-wagon-right collapse navbar-collapse">
+    <!-- Avatar with dropdown menu -->
+    <% if user_signed_in? %>
+    <div class="navbar-wagon-item navbar-ticket-item">
+      <%= link_to "Create a Raffle", "/raffles/new", class: "navbar-wagon-item navbar-create-button" %>
+    <div class="dropdown">
+      <% if current_user.photo? %>
+        <div class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" style="background-image: url('<%= cl_image_path current_user.photo %>')">
+        </div>
+      <% else %>
+        <div class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" style="background-image: url('<%= current_user.facebook_picture_url || 'https://www.lookout.com/uploads/images/other/legal/privacy-policy/legal-icons-user.svg' %>')">
+        </div>
 
-            <% end %>
+      <% end %>
 
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li>
-                <%= link_to user_path(current_user, :tab => "Participant") do %>
-                 <i class="fa fa-user navbar-dropdown-icon"></i> <%= t(".profile", default: "Dashboard") %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to new_raffle_path do %>
-                 <i class="fa fa-plus navbar-dropdown-icon"></i> <%= t(".profile", default: "List a Raffle") %>
-                <% end %>
-              </li>
-              <li>
-               <%= link_to root_path do %>
-                <i class="fa fa-home navbar-dropdown-icon"></i>  <%= t(".profile", default: "Home") %>
-               <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out navbar-dropdown-icon"></i>  <%= t(".sign_out", default: "Log out") %>
-                <% end %>
-              </li>
-            </ul>
-          </div>
-        <% else %>
-
-            <%= link_to "Create a Raffle", "raffles/new", class: "navbar-wagon-item navbar-create-button" %>
-        <a class= "navbar-wagon-item navbar-wagon-link", data-toggle = "modal" , data-target ="#myModal2"> Sign In </a>
-        <a class= "navbar-wagon-item navbar-wagon-link", data-toggle = "modal" , data-target ="#myModal"> Sign Up </a>
-        <% end %>
-      </div>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li>
+          <%= link_to user_path(current_user, :tab => "Participant") do %>
+           <i class="fa fa-user navbar-dropdown-icon"></i> <%= t(".profile", default: "Dashboard") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_raffle_path do %>
+           <i class="fa fa-plus navbar-dropdown-icon"></i> <%= t(".profile", default: "List a Raffle") %>
+          <% end %>
+        </li>
+        <li>
+         <%= link_to root_path do %>
+          <i class="fa fa-home navbar-dropdown-icon"></i>  <%= t(".profile", default: "Home") %>
+         <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-sign-out navbar-dropdown-icon"></i>  <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </li>
+      </ul>
     </div>
-  <!-- Dropdown list appearing on mobile only -->
+  </div>
+  <% else %>
+  <div class="navbar-wagon-item navbar-ticket-item">
+    <%= link_to "Create a Raffle", "raffles/new", class: "navbar-wagon-item navbar-create-button" %>
+    <a class= "navbar-wagon-item navbar-wagon-link", data-toggle = "modal" , data-target ="#myModal2"> Sign In </a>
+    <a class= "navbar-wagon-item navbar-wagon-link", data-toggle = "modal" , data-target ="#myModal"> Sign Up </a>
+  </div>
+  <% end %>
+  </div>
 </div>
 
 
