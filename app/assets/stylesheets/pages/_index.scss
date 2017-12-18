@@ -6,3 +6,9 @@
 @import "winners";
 @import "stripepayment";
 
+.gray-line {
+  width: 85%;
+  margin: 0 auto;
+  height: 1.2px;
+  background: linear-gradient(to right, white, $light-gray, white);
+}
