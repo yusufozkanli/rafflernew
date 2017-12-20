@@ -57,6 +57,7 @@
   color: $green;
   font-size: 14px;
   padding: 5px 12px;
+  margin: 20px;
   border: 1.3px solid $green;
   border-radius: 2px;
   font-weight: bold;
@@ -177,6 +178,13 @@
 .navbar-search {
   margin-left: 20px;
   size: 70px
+}
+
+.navbar-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
 }
 
 

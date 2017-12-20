@@ -25,7 +25,7 @@
   <div class="navbar-wagon-right collapse navbar-collapse">
     <!-- Avatar with dropdown menu -->
     <% if user_signed_in? %>
-    <div class="navbar-wagon-item navbar-ticket-item">
+    <div class="navbar-wagon-item navbar-ticket-item navbar-display">
       <%= link_to "Create a Raffle", "/raffles/new", class: "navbar-wagon-item navbar-create-button" %>
     <div class="dropdown">
       <% if current_user.photo? %>
