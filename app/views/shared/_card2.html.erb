@@ -16,7 +16,7 @@
         <div class="card-bar">
           <div class="card-bar-red" style="width: <%= (r.available_tickets.to_f / r.ticket_quantity * 100).to_i %>%">
           </div>
-          <p class="ticketquantity" style="color:#FF0000;"> <%= r.available_tickets %> / <%= r.ticket_quantity %>tickets left </p>
+          <p class="ticketquantity" style="color:#FF0000;"> <%= r.available_tickets %> / <%= r.ticket_quantity %> tickets left </p>
         </div>
         </div>
       <%= link_to "", raffle_path(r), class: "card-link"%>
