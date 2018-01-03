@@ -17,3 +17,8 @@
 .container-all-pages {
   min-height: calc(100vh - 170px);
 }
+
+form abbr[title] {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
