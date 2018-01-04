@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
   def welcome(user)
     @user = user
 
-    mail(to: @user.email, subject: "Welcome to Raffler")
+    mail(to: @user.email, subject: "Welcome to Rafflrs")
   end
 
   def raffle_result_email(user)
