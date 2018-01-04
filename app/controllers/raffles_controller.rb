@@ -21,13 +21,25 @@ class RafflesController < ApplicationController
 
   def browse
     if params[:search]
-      @raffles = Raffle.all.where("model iLIKE ?", "%#{params[:search]}%").where("status = 'active'")
+      sql_search = "model ILIKE :search
+      OR title ILIKE :search
+      OR brand ILIKE :search
+      OR color ILIKE :search
+      OR category_name ILIKE :search
+      "
+      @raffles = Raffle.all.where(sql_search, search: "%#{params[:search]}%").where("status = 'active'")
     elsif params[:category]
       @raffles = Raffle.all.where(category_name: params[:category]).where("status = 'active'")
     elsif params[:search] && params[:category]
     else
       @raffles = Raffle.where("status = 'active'")
     end
+
+    # if params[:search].blank?
+    #   redirect_to root_path
+    # else
+    #   @raffles = Raffle.browse(params[:search])
+    # end
   end
 
   def create
@@ -60,7 +72,7 @@ class RafflesController < ApplicationController
   private
 
   def raffle_params
-  params.require(:raffle).permit(:title, :category_name, :brand, :model, :color, :price, :description, :end_date, :ticket_quantity, :photo)
+    params.require(:raffle).permit(:title, :category_name, :brand, :model, :color, :price, :description, :end_date, :ticket_quantity, :photo)
   end
 
 
