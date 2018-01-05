@@ -15,7 +15,7 @@
         <%= f.input :description %>
         <%= f.input :end_date %>
         <%= f.input :ticket_quantity %>
-        <%= f.input :reserve_ticket_quantity %>
+        <%= f.input :reserve_ticket_quantity, input_html: { min: '50'} %>
         <%= f.input :photo, required: true %>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.submit "Add your raffle", class: "btn btn-success" %>
