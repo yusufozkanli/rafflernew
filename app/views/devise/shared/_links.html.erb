@@ -21,7 +21,7 @@
 <%- if devise_mapping.omniauthable? %>
   <%- User.omniauth_providers.each do |provider| %>
   <div class= "fa fa-facebook"></div>
-    <%= link_to "login with Facebook", omniauth_authorize_path(resource_name, provider) %>
+    <%= link_to "Login with Facebook", omniauth_authorize_path(resource_name, provider) %>
 
     <br />
 

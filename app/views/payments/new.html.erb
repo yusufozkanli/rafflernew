@@ -3,9 +3,9 @@
     <div class="paymentbox text-center">
       <div class="payment-content">
         <% if @command.amount.to_i < 2 %>
-        <h2> you are purchasing 1 ticket </h2>
+        <h2> You are purchasing 1 ticket </h2>
         <% else %>
-        <h2> you are purchasing <%= @command.amount.to_i %> tickets </h2>
+        <h2> You are purchasing <%= @command.amount.to_i %> tickets </h2>
         <% end %>
       <h1>So close to winning your <br> dream luxury product.</h1>
         <%= form_tag command_payments_path(@command) do %>
