@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20180105010418) do
   create_table "commands", force: :cascade do |t|
     t.string "state"
     t.string "order_sku"
-    t.integer "amount_pennies", default: 0, null: false
+    t.integer "amount_cents", default: 0, null: false
     t.json "payment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20180105010418) do
     t.datetime "updated_at", null: false
     t.string "ticket_number"
     t.boolean "won", default: false
-    t.integer "price_pennies", default: 0, null: false
+    t.integer "price_cents", default: 0, null: false
     t.string "sku"
     t.index ["raffle_id"], name: "index_orders_on_raffle_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20180105010418) do
     t.integer "ticket_quantity"
     t.string "title"
     t.integer "available_tickets"
-    t.integer "price_pennies", default: 0, null: false
+    t.integer "price_cents", default: 0, null: false
     t.integer "reserve_ticket_quantity"
     t.index ["user_id"], name: "index_raffles_on_user_id"
   end
