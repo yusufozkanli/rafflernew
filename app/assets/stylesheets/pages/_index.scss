@@ -30,7 +30,7 @@
   font-size: 50px;
 }
 
-.count span {
+.step-count span {
   display: inline-block;
   height: 150px;
   width: 150px;
@@ -41,13 +41,27 @@
   border-radius: 100%;
   font-size: 60px;
   font-weight: bold;
-  font-weight: "Raleway", "Helvetica", "sans-serif";
   border: 6px solid white;
-  margin-left: 100px;
-  margin-top: 100px;
 }
 
-.count {
-  margin-top: -20px;
+.step-count {
+}
+
+.step-text {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.index-steps {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 50px auto;
+}
+
+.nth-step {
+  width: 200px;
+  text-align: center;
 }
 
