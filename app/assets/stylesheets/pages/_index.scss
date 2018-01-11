@@ -6,6 +6,7 @@
 @import "winners";
 @import "stripepayment";
 @import "browse";
+@import "howitworks";
 
 .gray-line {
   width: 85%;
@@ -15,53 +16,4 @@
   background: linear-gradient(to right, white, $light-gray, white);
 }
 
-.container-how-it-works {
-  min-height: calc(110vh - 170px);
-  background-color: $green;
-  padding: 5px;
-  margin-top: -25px;
-}
-
-.howworkstitle {
-  text-align: center;
-  margin-top: 50px;
-  color: white;
-  font-weight: bold;
-  font-size: 50px;
-}
-
-.step-count span {
-  display: inline-block;
-  height: 150px;
-  width: 150px;
-  background: $green;
-  color: white;
-  text-align: center;
-  line-height: 140px;
-  border-radius: 100%;
-  font-size: 60px;
-  font-weight: bold;
-  border: 6px solid white;
-}
-
-.step-count {
-}
-
-.step-text {
-  color: white;
-  font-weight: bold;
-  text-align: center;
-}
-
-.index-steps {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  margin: 50px auto;
-}
-
-.nth-step {
-  width: 200px;
-  text-align: center;
-}
 
