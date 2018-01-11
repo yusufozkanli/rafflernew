@@ -1,5 +1,5 @@
 <%- if controller_name != 'sessions' %>
-  <a class= "navbar-wagon-item navbar-wagon-link", data-toggle = "modal" , data-target ="#myModal2"> Log In </a>
+  <%= link_to "Log in", new_session_path(resource_name) %><br />
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
