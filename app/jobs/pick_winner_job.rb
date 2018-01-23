@@ -50,5 +50,4 @@ class PickWinnerJob < ApplicationJob
         end
       end
     end
-
-  end
+end

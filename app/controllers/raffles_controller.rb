@@ -34,12 +34,6 @@ class RafflesController < ApplicationController
     else
       @raffles = Raffle.where("status = 'active'")
     end
-
-    # if params[:search].blank?
-    #   redirect_to root_path
-    # else
-    #   @raffles = Raffle.browse(params[:search])
-    # end
   end
 
   def create
@@ -74,6 +68,4 @@ class RafflesController < ApplicationController
   def raffle_params
     params.require(:raffle).permit(:title, :category_name, :brand, :model, :color, :price, :description, :end_date, :ticket_quantity, :reserve_ticket_quantity, :photo)
   end
-
-
 end
