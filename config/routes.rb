@@ -1,18 +1,20 @@
 Rails.application.routes.draw do
+  get 'subscribers/index'
+
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'raffles#index'
   get '/browse' , to: 'raffles#browse'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :raffles do
-    resources :orders, only: [:new, :create,] do
+    resources :orders, only: [:new, :create ] do
       get '/confirmation', to: 'orders#confirmation'
       get '/winner', to: 'orders#winner'
     end
   end
 
   resources :commands, only: [] do
-    resources :payments, only: [:new, :create]
+    resources :payments, only: [ :new, :create ]
   end
 
   get "/commands/:id", to: "commands#show", as: :commands
@@ -20,4 +22,5 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [ :show, :update, :edit ]
+  resources :subscribers, only: [ :index, :create ]
 end
