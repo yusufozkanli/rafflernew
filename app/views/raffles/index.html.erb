@@ -5,4 +5,10 @@
   <div class="gray-line"></div>
   <%= render 'orders/winnercard' %>
   <%= render 'shared/howitworks' %>
+  <h1>Newsletter</h1>
+<%= form_for @subscriber do |f| %>
+  <%= f.text_field :name, placeholder: "Name" %>
+  <%= f.email_field :email, placeholder: "Email" %>
+  <%= f.submit %>
+<% end %>
 
