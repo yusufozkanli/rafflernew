@@ -46,13 +46,6 @@ class RafflesController < ApplicationController
     else
       render 'new'
     end
-
-    @subscriber = Subscriber.new(subscriber_params)
-    if @subscriber.save
-      redirect_to root_path, notice: "Saved Successfully!"
-    else
-      redirect_to root_path, notice: "Failed to save"
-    end
   end
 
   def edit
@@ -75,9 +68,5 @@ class RafflesController < ApplicationController
 
   def raffle_params
     params.require(:raffle).permit(:title, :category_name, :brand, :model, :color, :price, :description, :end_date, :ticket_quantity, :reserve_ticket_quantity, :photo)
-  end
-
-  def subscriber_params
-    params.require(:subscriber).permit(:name, :email)
   end
 end

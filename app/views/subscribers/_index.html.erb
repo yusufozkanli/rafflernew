@@ -1,0 +1,5 @@
+<%= form_for @subscriber do |f| %>
+  <%= f.text_field :name, placeholder: "Name", class: "footer-email-field" %>
+  <%= f.email_field :email, placeholder: "Email", class: "footer-email-field" %>
+  <%= f.submit %>
+<% end %>
