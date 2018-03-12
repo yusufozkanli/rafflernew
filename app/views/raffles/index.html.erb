@@ -1,3 +1,4 @@
+  <a class= "", data-toggle = "modal" , data-target ="#myModal3"> Open pop-up-window </a>
   <%= render 'shared/banner' %>
   <%= render 'shared/card2' %>
   <div class="gray-line"></div>
@@ -5,5 +6,17 @@
   <div class="gray-line"></div>
   <%= render 'orders/winnercard' %>
   <%= render 'shared/howitworks' %>
-<!--   <%= render 'subscribers/index' %> -->
 
+
+
+<!--   Modal -->
+
+<div class="modal green-modal fade text-center" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= render 'subscribers/index' %>
+      </div>
+    </div>
+  </div>
+</div>
