@@ -20,7 +20,7 @@
             data-name="My Ticket"
             data-email="<%= current_user.email %>"
             data-description="Ticket <%= @command.order_sku %>"
-            data-amount="<%= @command.amount_pennies %>"
+            data-amount="<%= @command.amount_cents %>"
             data-currency="<%= @command.amount.currency %>"></script>
 
         <% end %>
