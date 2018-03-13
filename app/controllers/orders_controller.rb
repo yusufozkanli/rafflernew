@@ -71,6 +71,8 @@ class OrdersController < ApplicationController
     set_ticket_number
   end
 
+  private
+
   def generate_ticket_number
     ticket_number = 10.times.map{rand(10)}.join
     return ticket_number
