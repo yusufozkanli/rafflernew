@@ -1,8 +1,5 @@
 class SubscribersController < ApplicationController
-
-  def index
-    @subscriber = Subscriber.new
-  end
+  skip_before_action :authenticate_user!, only: [:create]
 
   def create
     @subscriber = Subscriber.new(subscriber_params)

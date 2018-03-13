@@ -1,4 +1,10 @@
-  <a class= "", data-toggle = "modal" , data-target ="#myModal3"> Open pop-up-window </a>
+  <!-- Middle Navigation -->
+  <% if cookies[:saved_subscriber] %>
+  <% else %>
+  <div class="newsletter-line">
+    <a class= "newsletter-link", data-toggle = "modal", data-target ="#myModal3"><b>SIGN UP</b></a> to our Newsletter and win free tickets when the website is LIVE.
+  </div>
+  <% end %>
   <%= render 'shared/banner' %>
   <%= render 'shared/card2' %>
   <div class="gray-line"></div>
@@ -7,16 +13,13 @@
   <%= render 'orders/winnercard' %>
   <%= render 'shared/howitworks' %>
 
-
-
-<!--   Modal -->
-
-<div class="modal green-modal fade text-center" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <%= render 'subscribers/index' %>
+  <!--   Modal -->
+  <div class="modal green-modal fade text-center" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <%= render 'subscribers/index' %>
+        </div>
       </div>
     </div>
   </div>
-</div>

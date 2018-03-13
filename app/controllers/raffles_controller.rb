@@ -9,6 +9,7 @@ class RafflesController < ApplicationController
     @subscriber = Subscriber.new
   end
 
+
   def show
     @raffle = Raffle.find(params[:id])
     @order = Order.new
