@@ -1,5 +1,11 @@
-<%= form_for @subscriber do |f| %>
-  <%= f.text_field :name, placeholder: "Name", class: "" %>
-  <%= f.email_field :email, placeholder: "Email", class: "" %>
-  <%= f.submit %>
-<% end %>
+<div class="newsletter-form">
+  <%= form_for @subscriber do |f| %>
+  <div class="newsletter-div">
+    <span class="newsletter-indic">Name</span> <%= f.text_field :name, placeholder: "", class: "newsletter-field" %>
+  </div>
+  <div class= "newsletter-div">
+    <span class= "newsletter-indic">Mail</span> <%= f.email_field :email, placeholder: "", class: "newsletter-field" %>
+  </div>
+    <%= f.submit "Submit", class: "navbar-create-button" %>
+  <% end %>
+</div>

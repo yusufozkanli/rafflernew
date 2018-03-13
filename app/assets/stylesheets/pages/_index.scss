@@ -33,4 +33,28 @@
   }
 }
 
+.newsletter-field {
+  background-color: $gray;
+  color: $light-gray;
+  border-color: $light-gray;
+  width: 85% !important;
+  border-radius: 5px;
+  padding: 3px;
+  &:focus, &:active {
+    outline: none;
+  }
+}
 
+
+
+.newsletter-indic {
+  width: 15% !important;
+  font-weight: bold;
+}
+
+.newsletter-div {
+  margin: 10px 0px;
+  text-align: left !important;
+  display: flex;
+  justify-content: center;
+}
